@@ -1,0 +1,82 @@
+{% extends "layouts/full-page.html"  %}
+
+{% block content %}
+
+    {% raw %}
+
+    <section class="main-content">
+        <div class="container">
+            <div cart id="cart" class="order-view">
+                <h1>My Order</h1>
+
+                <div ng-hide="cart.items.length">No Items in your order</div>
+
+                <div ng-show="cart.items.length">
+                    <table class="table">
+                        <tbody>
+                            <tr ng-repeat="item in cart.items">
+                                <td style="width: 120px;">
+                                    <img class="image" ng-src="{{item.photo}}" ng-show="item.photo" height="120">
+                                </td>
+                                <td>
+                                    <b>{{item.name}}</b> {{item.variant}}
+                                    <div ng-repeat="choice in item.choices">
+                                        <i>
+                                            <span ng-repeat="option in choice.options">
+                                                {{choice.name}}: {{option.name}}
+                                            </span><br>
+                                        </i>
+                                    </div>
+                                    <div ng-show="item.note" style="color:red"><b>Note:</b> {{item.note}}</div>
+                                </td>
+                                <td class="text-right quantity">
+                                    <div class="input-group">
+                                        <span class="input-group-addon qty-change noselect" ng-click="decrement(item, $event)">-</span>
+                                        <input class="form-control" aria-label="Quantity" type="tel" ng-model="item.qty" min="1" pattern="[0-9]*">
+                                        <span class="input-group-addon qty-change noselect" ng-click="increment(item, $event)">+</span>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="amount">
+                                        {{item.price | currency}}
+                                    </div>
+                                    <div class="amount" ng-repeat="choice in item.choices">
+                                        <span ng-repeat="option in choice.options">
+                                            {{option.price | currency}}
+                                        </span><br>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <div class="amount">
+                                        {{item.total | currency}}
+                                    </div>
+                                 </td>
+                                <td class="actions">
+                                    <button type="button" class="btn btn-link" ng-click="confirmRemove(item)">
+                                        <h4><i class="fa fa-remove"></i></h4>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="text-right subtotal" colspan="5">
+                                    <b>Subtotal:</b> {{cart.subtotal | currency}}
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right subtotal" colspan="5">
+                                    <a href="/checkout" class="btn btn-primary btn-checkout">Checkout</a>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endraw %}
+
+{% endblock %}

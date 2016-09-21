@@ -1,0 +1,95 @@
+<div class="row {{ block.classes }}" >
+    {% if menus|length > 1 %}
+        <ul class="nav nav-tabs">
+            {% for menu in menus %}
+                <li role="presentation" class="{% if loop.index == 1 %}active{% endif %}">
+                    <a href="#menu-{{ loop.index }}" role="tab" data-toggle="tab">{{ menu.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <div class="tab-content">
+        {% for menu in menus %}
+            <div id="menu-{{ loop.index }}" role="tabpanel" class="tab-pane {% if loop.index == 1 %}active{% endif %}">
+                <h1 class="menu-title">{{ menu.name }}</h1>
+                {% for item in menu.content %}
+                    <div id="menu-{{ item.type }}-{{ loop.index }}" class="menu-{{ item.type }}">
+                        <div>
+                        {% if item.type == 'section' %}
+                            <h3 class="item-name">{{ item.name|e }}</h3>
+                            <div class="item-description">{{ item.description }}</div>
+
+                            {% if item.times.today %}
+                                <div class="serving-hours">
+                                    <i class="fa fa-clock-o"></i>
+                                    <b>Serving hours: </b>
+                                    {% for time in item.times.today.times %}
+                                        <span>
+                                            {{ time.start }} - {{ time.end }}
+                                        </span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if item.type == 'subsection' %}
+                            <div class="item-name">{{ item.name|e }}</div>
+                        {% endif %}
+
+                        {% if item.type == 'item' %}
+                            <div class="item-image">
+                                <a data-href="/items/{{ item.id }}" data-add-menu-item="{{ item.id }}">
+                                    <img class="image" src="{{ theme.path }}/img/menu-placeholder.png" {% if item.photo %}data-src="{{ item.photo }}"{% endif %}>
+                                </a>
+                            </div>
+
+                            <div class="item-info">
+
+                                <div class="item-name">
+                                    <a href="#" data-add-menu-item="{{ item.id }}">{{ item.name|e }}</a>
+                                    {% if item.flag_recommended %}<img src="/builds/img/star.png" alt="recommended">{% endif %}
+                                    {% if item.flag_spicy %}<img src="/builds/img/spicy.png" alt="spicy">{% endif %}
+                                    {% if item.flag_veggie %}<img src="/builds/img/veggie.png" alt="veggie">{% endif %}
+                                    {% if item.flag_healthy %}<img src="/builds/img/healthy.png" alt="healthy">{% endif %}
+                                </div>
+
+                                <div class="item-variants">
+                                    {% for variant in item.variants %}
+                                        <div class="variant">
+                                            {% if item.variants|length > 1 %}
+                                                <span class="variant-name">
+                                                    {{ variant.name }}
+                                                </span>
+                                            {% endif %}
+                                            {% if variant.price > 0 %}
+                                                <span class="variant-price">
+                                                    {{ variant.price  | currency }}
+                                                </span>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="item-description">{{ item.description }}</div>
+
+                                {% if customer %}
+                                    <div class="item-favorite">
+                                        <div ng-class="{active: isFavorite(item)}" ng-click="toggleFavorite(item)"></div>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                            {% if block.config.order_enabled %}
+                                <div class="item-add">
+                                    <button data-add-menu-item="{{ item.id }}">Add</button>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

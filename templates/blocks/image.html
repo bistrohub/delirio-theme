@@ -1,0 +1,16 @@
+<div class="{{ block.classes }}">
+    {% if image.url %}
+        {% if image.action == 'link' %}
+            <a href="{{ image.link }}">
+                <img src="{{ image.url }}"
+                    style="width: {{ image.width | default('auto') }}; height: {{ image.height | default('auto') }};"
+                    title="{{ image.title }}">
+            </a>
+        {% else %}
+            <img src="{{ image.url }}"
+                style="width: {{ image.width | default('auto') }}; height: {{ image.height | default('auto') }};"
+                {% if image.action == 'lightbox' %}data-image-lightbox="{{ image.url }}"{% endif %}
+                title="{{ image.title }}">
+        {% endif %}
+    {% endif %}
+</div>

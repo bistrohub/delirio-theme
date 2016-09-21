@@ -1,0 +1,27 @@
+<div class="row {{ block.classes }}">
+
+    <div data-block-instagram="{{ block.id }}">
+        {% raw %}
+            <!-- content inside the raw directive renders in the browser -->
+            <h1 class="instagram-tile" ng-show="data.config.show_instagram">Instagram</h1>
+
+            <img class="instagram-picture" ng-show="data.config.show_picture" ng-src="{{data.picture}}" alt="{{data.username}}">
+
+            <h2 class="instagram-name" ng-show="data.config.show_name">{{data.fullname}}</h2>
+
+            <p class="instagram-bio" ng-show="data.config.show_bio">{{data.bio}}</p>
+
+            <a class="instagram-link" ng-show="data.config.show_link" ng-href="{{data.link}}" target="_blank">
+
+            <ul class="instagram-media n{{data.config.per_row}}">
+
+                <li ng-repeat="media in data.media">
+                    <a ng-href="{{media.link}}" target="_blank">
+                        <img ng-if="data.config.per_row > 5" ng-src="{{media.thumbnail.url}}" alt="{{media.caption}}">
+                        <img ng-if="data.config.per_row <= 5" ng-src="{{media.image.url}}" alt="{{media.caption}}">
+                    </a>
+                </li>
+            </ul>
+        {% endraw %}
+    </div>
+</div>

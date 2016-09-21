@@ -1,0 +1,16 @@
+{% extends "layouts/headless.html"  %}
+
+{% block navbar %}
+    <div class="header-lock">
+        <i class="fa fa-lock"></i>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <section class="main-content">
+        <div class="container">
+            {{ content("main") }}
+        </div>
+    </section>
+{% endblock %}

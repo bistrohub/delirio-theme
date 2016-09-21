@@ -1,0 +1,25 @@
+<ul class="nav navbar-nav navbar-pages">
+    {% for a in navigation %}
+    <li class="{{ a.active ? 'active' : '' }}">
+        <a href="{{ a.path }}">{{ a.name }}</a>
+        {% if a.pages %}
+        <ul>
+            {% for b in a.pages %}
+            <li class="{{ b.active ? 'active' : '' }}">
+                <a href="{{ b.path }}">{{ b.name }}</a>
+                {% if b.pages %}
+                <ul>
+                    {% for c in b.pages %}
+                    <li class="{{ c.active ? 'active' : '' }}">
+                        <a href="{{ c.path }}">{{ c.name }}</a>
+                    </li> 
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li> 
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li> 
+    {% endfor %}
+</ul>

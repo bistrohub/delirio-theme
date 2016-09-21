@@ -1,0 +1,13 @@
+{% extends "layouts/base.html"  %}
+
+{% block body %}
+
+    {% include "partials/navbar-simple.html"  %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+    	{% include "partials/footer.html"  %}
+    {% endblock %}
+
+{% endblock %}

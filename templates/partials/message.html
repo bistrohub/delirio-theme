@@ -1,0 +1,5 @@
+{% if message.content %}
+	<div id="message-box" class="alert alert-{{ message.status }}">
+		<span>{{ message.content }}</span>
+	</div>
+{% endif %}

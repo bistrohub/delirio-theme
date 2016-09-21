@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+{% include "partials/head.html"  %}
+<body class="{{ fields.navbar_fixed }}" data-custom-field="class:navbar_fixed">
+    {{ body }}
+  
+    {% block body %}{% endblock %}
+
+    {{ footer }}
+</body>
+</html>

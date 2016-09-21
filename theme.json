@@ -1,0 +1,76 @@
+{
+    "name": "Delirio",
+    "scripts": [
+        "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.21/skrollr.min.js",
+        "js/scripts.js"
+    ],
+    "fields": {
+        "nav_logo": {
+            "type": "image",
+            "label": "Top Nav Logo",
+            "default": "img/nav-logo.png"
+        },
+        "slogan": {
+            "type": "text",
+            "label": "Slogan",
+            "default": "Delicious Food"
+        },
+        "home_background": {
+            "type": "image",
+            "label": "Home Background Logo",
+            "default": "img/bg.jpg"
+        },
+        "navbar_fixed": {
+            "type": "toggle",
+            "label": "Fixed Navigation Header",
+            "default": "on",
+            "on": "navbar-fixed",
+            "off": ""
+        },
+        "home_image": {
+            "type": "image",
+            "label": "Hero Logo",
+            "default": "img/logo-white.png"
+        },
+        "colorA": {
+            "type": "color",
+            "label": "Color A",
+            "default": "#7EC243"
+        },
+        "colorB": {
+            "type": "color",
+            "label": "Color B",
+            "default": "#D6DF23"
+        },
+        "colorC": {
+            "type": "color",
+            "label": "Color C",
+            "default": "#F9AB19"
+        },
+        "colorD": {
+            "type": "color",
+            "label": "Color D",
+            "default": "#EC008B"
+        },
+        "footer_logo": {
+            "type": "image",
+            "label": "Footer Logo",
+            "default": "img/logo-white.png"
+        }
+    },
+    "editor": [
+        {
+            "label": "Config",
+            "fields": ["navbar_fixed"]
+        },
+        {
+            "label": "Colors",
+            "fields": ["colorA", "colorB", "colorC", "colorD"]
+        },
+        {
+            "label": "Images",
+            "fields": ["nav_logo", "home_background", "home_image", "footer_logo"]
+        }
+    ]
+}

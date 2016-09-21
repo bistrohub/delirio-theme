@@ -1,0 +1,54 @@
+{% extends "layouts/headless.html"  %}
+
+{% block content %}
+
+    <section class="main-content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-offset-2 col-sm-7">
+                    <h1 class="align-center">{{ name }}</h1>
+
+                    <form method="post" action="/login" class="form-horizontal" role="form">
+                        <input type="hidden" name="_token" value="{{ csrf_token }}"></input>
+                        <fieldset>
+                            <legend>Customer Login</legend>
+                            {% include "partials/message.html" %}
+
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Email:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" tabindex="1" id="email" name="email" placeholder="Email Address" value="{{ old.email }}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="col-sm-2 control-label">Password:</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="password" tabindex="2" id="password" name="password" placeholder="Password">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-4">
+                                    <button type="submit" class="btn btn-primary">Log In</button>
+                                </div>
+                                <div class="col-sm-4"><a href="/login/forgot-password" class="pull-right">Forgot Password</a></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8 align-right">
+                                    Don't have an account? <a href="/login/signup">Sign Up for {{ name }}</a>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

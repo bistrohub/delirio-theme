@@ -1,0 +1,44 @@
+<div class="{{ block.classes }}">
+    <div>
+        <a href="#" data-open-hours><i class="fa fa-clock-o"></i></a>
+        <b>{{ block.config.message }}</b>
+
+        {% if block.config.show_today %}
+            {% for hour in  time.today.times %}
+                <span>
+                    {{ hour.start }} - {{ hour.end }}
+                </span>
+            {% endfor %}
+        {% endif %}
+
+        {% if block.config.show_week %}
+            <table class="table">
+                {% for item in  time.week %}
+                    <tr>
+                        <td><b>{{ item.day | capitalize }}</b></td>
+                        <td>
+                            {% for hour in  item.times %}
+                                <span>
+                                    {{ hour.start }} - {{ hour.end }}
+                                </span>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% if item.today %}
+                                {% if time.open %}
+                                    <b style="color:green">Open Now</b>
+                                {% else %}
+                                    <b style="color:red">Closed</b>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        {% if time.open and block.config.show_close_meesage %}
+            <p>{{ block.config.message_when_closed }}</p>
+        {% endif %}
+    </div>
+</div>

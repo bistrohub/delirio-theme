@@ -1,0 +1,14 @@
+<div class="navbar-container">
+    {% include "partials/color-bar.html" %}
+    <div class="container">
+        <nav class="navbar navbar-delirio" role="navigation">
+            <div class="navbar-header clearfix">
+                <a class="navbar-brand" href="/">
+                    <img src="{{ fields.nav_logo }}" data-custom-field="src:nav_logo" alt="{{ name }}">
+                </a>
+                
+                {% block navbar %}{% endblock %}
+            </div>
+        </nav>
+    </div>
+</div>

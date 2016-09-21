@@ -1,0 +1,22 @@
+<div class="{{ block.classes }}">
+    <div data-block-yelp="{{ block.id }}">
+        {% raw %}
+            <!-- content inside the raw directive renders in the browser -->
+            <div ng-repeat="review in reviews" class="row" ng-show="reviews.length">
+                <div class="col-sm-1">
+                    <img ng-src="{{review.rating_image_url}}">
+                </div>
+                    <div class="col-sm-11"><p>{{review.excerpt}}</p>
+                </div>
+            </div>
+
+            <div ng-hide="reviews.length">
+                No reviews yet
+            </div>
+
+            <div class="align-right">
+                <img src="https://s3-media2.fl.yelpcdn.com/assets/srv0/developer_pages/9c9b10dc7226/assets/img/reviewsFromYelpWHT.gif" alt="Reviews by Yelp">
+            </div>
+        {% endraw %}
+    </div>
+</div>

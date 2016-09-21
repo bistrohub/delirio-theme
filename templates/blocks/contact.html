@@ -1,0 +1,79 @@
+<div class="{{ block.classes }}">
+    <form class="form-horizontal" action="{{ action }}" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token }}"></input>
+        <input type="hidden" name="_block" value="{{ block.id }}"></input>
+        <fieldset>
+            <legend class="text-center">{{ title }}</legend>
+
+            <!-- Response Message-->
+            {% if message %}
+                {% if status == 'success' %}
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-9">
+                            <div class="alert alert-success">{{ message }}</div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if status == 'error' %}
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-9">
+                            <div class="alert alert-danger">{{ message }}</div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            <!-- Name input-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="name">Name</label>
+                <div class="col-md-9">
+                    <input id="name" name="name" value="{{ values.name }}" type="text" placeholder="Your name" class="form-control">
+                    {% if errors.name %}
+                        <div class="alert alert-danger">{{ errors.name }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="email">E-mail</label>
+                <div class="col-md-9">
+                    <input id="email" name="email" value="{{ values.email }}" type="email" placeholder="Your email" class="form-control">
+                    {% if errors.email %}
+                        <div class="alert alert-danger">{{ errors.email }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Subject input-->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="subject">Subject</label>
+                <div class="col-md-9">
+                    <input id="subject" name="subject" value="{{ values.subject }}" type="text" placeholder="" class="form-control">
+                    {% if errors.subject %}
+                        <div class="alert alert-danger">{{ errors.subject }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Message body -->
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="message">Message</label>
+                <div class="col-md-9">
+                    <textarea class="form-control" id="message" name="message" placeholder="" rows="5">{{ values.message }}</textarea>
+                    {% if errors.message %}
+                        <div class="alert alert-danger">{{ errors.message }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Form actions -->
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-9 text-right">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+            
+        </fieldset>
+    </form>
+</div>

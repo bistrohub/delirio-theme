@@ -1,0 +1,7 @@
+<div class="row {{ block.classes }}">
+    {% for column in columns %}
+        <div class="columns col-{{column.device}}-{{column.size}}">
+            {{ column.content }}
+        </div>
+    {% endfor %}
+</div>
