@@ -8,7 +8,6 @@
             {% endfor %}
         </ul>
     {% endif %}
-    
     <div class="tab-content">
         {% for menu in menus %}
             <div id="menu-{{ loop.index }}" role="tabpanel" class="tab-pane {% if loop.index == 1 %}active{% endif %}">
@@ -45,13 +44,12 @@
                             </div>
 
                             <div class="item-info">
-
                                 <div class="item-name">
                                     <a href="#" data-add-menu-item="{{ item.id }}">{{ item.name|e }}</a>
-                                    {% if item.flag_recommended %}<img src="/builds/img/star.png" alt="recommended">{% endif %}
-                                    {% if item.flag_spicy %}<img src="/builds/img/spicy.png" alt="spicy">{% endif %}
-                                    {% if item.flag_veggie %}<img src="/builds/img/veggie.png" alt="veggie">{% endif %}
-                                    {% if item.flag_healthy %}<img src="/builds/img/healthy.png" alt="healthy">{% endif %}
+                                    {% if item.flag_recommended %}<img src="{{ theme.path }}/img/star.png" alt="recommended">{% endif %}
+                                    {% if item.flag_spicy %}<img src="{{ theme.path }}/img/spicy.png" alt="spicy">{% endif %}
+                                    {% if item.flag_veggie %}<img src="{{ theme.path }}/img/veggie.png" alt="veggie">{% endif %}
+                                    {% if item.flag_healthy %}<img src="{{ theme.path }}/img/healthy.png" alt="healthy">{% endif %}
                                 </div>
 
                                 <div class="item-variants">

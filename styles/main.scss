@@ -434,12 +434,12 @@ i.creditcard {
     line-height: 1px;
     margin: 0 0 -15px;
 }
-i.creditcard.visa       { background-image: url(/builds/img/visa.gif); }
-i.creditcard.mastercard { background-image: url(/builds/img/mastercard.gif); }
-i.creditcard.american   { background-image: url(/builds/img/amex.gif); }
-i.creditcard.amex       { background-image: url(/builds/img/amex.gif); }
-i.creditcard.discover   { background-image: url(/builds/img/discover.gif); }
-i.creditcard.diners     { background-image: url(/builds/img/dinersclub.gif); }
+i.creditcard.visa       { background-image: url(theme-path("img/visa.gif")); }
+i.creditcard.mastercard { background-image: url(theme-path("img/mastercard.gif")); }
+i.creditcard.american   { background-image: url(theme-path("img/amex.gif")); }
+i.creditcard.amex       { background-image: url(theme-path("img/amex.gif")); }
+i.creditcard.discover   { background-image: url(theme-path("img/discover.gif")); }
+i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")); }
 
 .order-type,.order-schedule {
     display: flex;
