@@ -1,26 +1,43 @@
-$colorA: get-field("colorA"); // #7EC243
-$colorB: get-field("colorB"); // #D6DF23
-$colorC: get-field("colorC"); // #F9AB19
-$colorD: get-field("colorD"); // #EC008B
+// #7EC243
+$colorA: get-field("colorA");
 
-$colorE: #333;
+// #D6DF23
+$colorB: get-field("colorB");
+
+// #F9AB19
+$colorC: get-field("colorC");
+
+// #EC008B
+$colorD: get-field("colorD");
+
+$colorE: #555;
 $colorF: #FFF;
 $colorG: #CCC;
 
-@font-face {
-    font-family: Gotham;
-    src: url(theme-path("fonts/Gotham-Light.otf")) format("opentype");
+body {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 18px;
+    background-color: #EEE;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-@font-face {
-    font-family: Gotham;
-    font-weight: 500;
-    src: url(theme-path("fonts/Gotham-Medium.otf")) format("opentype");
+
+body.navbar-fixed {
+    padding-top: 75px;
+    .navbar-container {
+        max-height: 75px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
 }
-@font-face {
-    font-family: Gotham;
-    font-weight: 700;
-    src: url(theme-path("fonts/Gotham-Bold.otf")) format("opentype");
+
+h1, h2, h3 {
+    color: $colorA;
 }
+
 select:not([multiple]) {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -30,6 +47,7 @@ select:not([multiple]) {
     padding: .5em;
     padding-right: 1.5em;
 }
+
 .clearfix {
     *zoom: 1;
     &:before {
@@ -44,68 +62,58 @@ select:not([multiple]) {
         clear: both;
     }
 }
-body {
-    font-family: Gotham;
-    font-size: 16px;
-    background-color: #EEE;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-body.navbar-fixed {
-    padding-top: 75px;
-    .navbar-container {
-        max-height: 75px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-}
-h1, h2, h3 {
-    color: $colorA;
-}
+
 #missing {
     padding: 30px 0;
 }
+
 .btn {
     padding: 10px 12px;
     border-radius: 0;
     font-weight: 700;
 }
+
 img[data-image-lightbox] {
     cursor: -moz-zoom-in;
     cursor: -webkit-zoom-in;
     cursor: zoom-in;
 }
+
 .input-group-btn {
     width: inherit;
 }
+
 .badge {
     background-color: $colorD;
 }
+
 a, a:hover, a:focus {
     color: $colorD;
     text-decoration: none;
 }
+
 .alert-error {
     color: $colorD;
     font-size: 24px;
     font-weight: 700;
     text-align: center;
 }
+
 .align-left {
     text-align: left;
 }
+
 .align-center {
     text-align: center;
 }
+
 .align-right {
     text-align: right;
 }
+
 .nav-tabs {
-    >li.active {
-        >a {
+    > li.active {
+        > a {
             background-color: #FAFAFA;
             background-color: #FFF !important;
             &:hover {
@@ -119,13 +127,16 @@ a, a:hover, a:focus {
         }
     }
 }
+
 .hide {
     display: none;
 }
+
 .row {
     margin-left: 0;
     margin-right: 0;
 }
+
 .main-content {
     flex: 1;
     background: white;
@@ -149,25 +160,25 @@ a, a:hover, a:focus {
         color: $colorE;
     }
 }
+
 .noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
+
 .color-bar {
-    >div {
+    > div {
         height: 5px;
     }
 }
+
 .input-group-addon {
     border-radius: 0;
 }
+
 .panel {
     border-radius: 0;
 }
+
 .panel-info {
     border-color: $colorG;
     .panel-heading {
@@ -180,6 +191,7 @@ a, a:hover, a:focus {
         border-bottom-left-radius: 0;
     }
 }
+
 .panel-title {
     h5 {
         color: $colorF;
@@ -187,6 +199,7 @@ a, a:hover, a:focus {
         font-weight: 600;
     }
 }
+
 .menu-item-modal {
     .box-header {
         h1 {
@@ -194,7 +207,6 @@ a, a:hover, a:focus {
             font-size: 24px;
         }
     }
-
     .box-footer {
         button {
             background-color: $colorD;
@@ -215,14 +227,12 @@ a, a:hover, a:focus {
         }
     }
     .choices {
-
         label {
             font-size: 12px;
             i {
                 font-weight: 600;
             }
         }
-
         .checkbox {
             margin-bottom: 4px;
         }
@@ -272,27 +282,33 @@ a, a:hover, a:focus {
         cursor: pointer;
     }
 }
+
 .btn-success {
     background-color: $colorA !important;
 }
+
 .item-add {
     button {
         background-color: $colorA !important;
     }
 }
+
 .btn-primary {
     color: $colorF;
     background-color: $colorA;
     border-color: #4E9213;
 }
+
 .validation-warning {
     color: $colorC;
     font-size: 12px;
 }
+
 .customer-nav-wrapper {
     text-align: right;
     margin: 0 17px;
 }
+
 .customer-nav {
     display: inline-block;
     padding: 0;
@@ -309,10 +325,12 @@ a, a:hover, a:focus {
         }
     }
 }
+
 .order-count {
     margin: 24px 40px;
     position: absolute;
 }
+
 .order-dropdown {
     display: inline-block;
     .input-group-addon {
@@ -369,6 +387,7 @@ a, a:hover, a:focus {
         width: 100%;
     }
 }
+
 legend {
     margin: 0px 0 10px;
     font-size: 16px;
@@ -381,15 +400,16 @@ legend {
     text-align: center;
 }
 
-
 .nav-tabs li, a {
     cursor: pointer;
 }
+
 .empty-settings {
     min-height: 200px;
     line-height: 40px;
     padding: 0 20px;
 }
+
 .panel-customer {
     .panel-body {
         padding: 15px 0 0;
@@ -400,8 +420,8 @@ legend {
     .nav-tabs li:first-child {
         margin-left: 20px;
     }
-    .nav>li>a:focus, .nav>li>a:hover {
-         background-color: #fff;
+    .nav > li > a:focus, .nav > li > a:hover {
+        background-color: #fff;
     }
 }
 
@@ -412,6 +432,7 @@ legend {
     font-size: 16px;
     font-weight: 200;
 }
+
 /* Checkout form */
 .header-lock {
     color: $colorA;
@@ -427,6 +448,7 @@ legend {
     top: 0;
     opacity: 0.4;
 }
+
 i.creditcard {
     display: inline-block;
     width: 50px;
@@ -434,21 +456,39 @@ i.creditcard {
     line-height: 1px;
     margin: 0 0 -15px;
 }
-i.creditcard.visa       { background-image: url(theme-path("img/visa.gif")); }
-i.creditcard.mastercard { background-image: url(theme-path("img/mastercard.gif")); }
-i.creditcard.american   { background-image: url(theme-path("img/amex.gif")); }
-i.creditcard.amex       { background-image: url(theme-path("img/amex.gif")); }
-i.creditcard.discover   { background-image: url(theme-path("img/discover.gif")); }
-i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")); }
 
-.order-type,.order-schedule {
+i.creditcard.visa {
+    background-image: url(theme-path("img/visa.gif"));
+}
+
+i.creditcard.mastercard {
+    background-image: url(theme-path("img/mastercard.gif"));
+}
+
+i.creditcard.american {
+    background-image: url(theme-path("img/amex.gif"));
+}
+
+i.creditcard.amex {
+    background-image: url(theme-path("img/amex.gif"));
+}
+
+i.creditcard.discover {
+    background-image: url(theme-path("img/discover.gif"));
+}
+
+i.creditcard.diners {
+    background-image: url(theme-path("img/dinersclub.gif"));
+}
+
+.order-type, .order-schedule {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
     input[type=radio] {
         display: none;
         margin: 10px;
-        &+label {
+        & + label {
             border-bottom: 2px solid transparent;
             display: inline-block;
             margin-right: 16px;
@@ -470,7 +510,7 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
             }
         }
         &:checked {
-            &+label {
+            & + label {
                 border-bottom: 2px solid $colorB;
                 &:after {
                     content: "\f046";
@@ -480,6 +520,7 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
         }
     }
 }
+
 .order-schedule-date {
     text-align: center;
     .select-container {
@@ -491,21 +532,20 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
         }
     }
 }
+
 .checkout-address-select {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-
-    >div {
+    > div {
         width: 200px;
         padding: 2px;
         flex: 1;
     }
-
     input[type=radio] {
         display: none;
         margin: 10px;
-        &+label {
+        & + label {
             cursor: pointer;
             border: 1px solid #ccc;
             color: #ccc;
@@ -529,7 +569,7 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
             }
         }
         &:checked {
-            &+label {
+            & + label {
                 border: 1px solid $colorA;
                 color: $colorA;
             }
@@ -539,6 +579,7 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
         text-align: center;
     }
 }
+
 .checkout-gratitude {
     .checkout-gratitude-options {
         display: flex;
@@ -593,7 +634,6 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
                 color: $colorD;
             }
         }
-
     }
 }
 
@@ -625,6 +665,7 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
         padding: 25px 0 10px 0;
     }
 }
+
 #back-to-top {
     margin: 0 0 7px;
     color: $colorF;
@@ -638,20 +679,24 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
         color: $colorF;
     }
 }
+
 [data-adaptive-bg] {
     opacity: 0;
 }
+
 .order-summary {
     .choices {
         font-size: 12px;
     }
 }
+
 .navbar-container {
     position: relative;
     z-index: 10;
     background-color: #ffffff;
     background-color: rgba(250, 250, 250, 0.9);
 }
+
 .navbar-delirio {
     position: relative;
     padding: 0;
@@ -662,8 +707,8 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
     .navbar-pages {
         float: right;
         margin: 0;
-        >li {
-            >a {
+        > li {
+            > a {
                 text-transform: lowercase;
                 font-size: 22px;
                 padding: 10px 15px;
@@ -682,14 +727,14 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
                 }
             }
             li {
-                >a {
+                > a {
                     text-transform: lowercase;
                     font-size: 16px;
                     padding: 14px 10px;
                 }
             }
         }
-        >li.active {
+        > li.active {
             a {
                 color: $colorA;
             }
@@ -719,9 +764,10 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
         margin-right: -17px;
     }
 }
+
 .nav.navbar-nav.navbar-pages {
-    >li {
-        >ul {
+    > li {
+        > ul {
             display: none;
             position: absolute;
             right: 0;
@@ -734,7 +780,7 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
             box-shadow: 0px 2px 4px -4px #333;
         }
         &:hover {
-            >ul {
+            > ul {
                 display: block;
             }
         }
@@ -743,17 +789,16 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
         }
     }
 }
+
 .home-banner {
     background-size: cover;
     height: 400px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     align-content: center;
-
-    >div {
+    > div {
         text-align: center;
     }
     .title {
@@ -767,13 +812,16 @@ i.creditcard.diners     { background-image: url(theme-path("img/dinersclub.gif")
         color: #FFF;
     }
 }
+
 .center {
     text-align: center;
 }
+
 .btn-order-online {
     font-size: 20px;
     font-weight: 600;
 }
+
 footer {
     background: $colorA;
     color: $colorF;
@@ -786,10 +834,10 @@ footer {
         list-style: none;
         padding: 0;
         margin: 0;
-        >li {
+        > li {
             padding: 0;
             margin: 0 0 20px 0;
-            >a {
+            > a {
                 color: $colorF;
                 font-size: 20px;
                 line-height: 24px;
@@ -803,45 +851,62 @@ footer {
         }
     }
 }
+
 .block-contact {
     button {
         background-color: $colorA;
         border-radius: 0;
         border-color: transparent;
         font-weight: 500;
-        font-family: Gotham;
         &:hover {
             background-color: #8EB233;
         }
     }
 }
+
 .block-instagram {
     /* Instagram */
     .instagram-media {
-      margin: 0;
-      padding: 0;
+        margin: 0;
+        padding: 0;
     }
     .instagram-media li {
-      display: inline-block;
-      width: 33%;
+        display: inline-block;
+        width: 33%;
     }
-    .instagram-media.n1 li { width: 100%; }
-    .instagram-media.n2 li { width: 50%; }
-    .instagram-media.n3 li { width: 33.333%; }
-    .instagram-media.n4 li { width: 25%; }
-    .instagram-media.n5 li { width: 20%; }
-    .instagram-media.n6 li { width: 16.666%; }
-    .instagram-media.n7 li { width: 14.285%; }
-    .instagram-media.n8 li { width: 12.5%; }
-
+    .instagram-media.n1 li {
+        width: 100%;
+    }
+    .instagram-media.n2 li {
+        width: 50%;
+    }
+    .instagram-media.n3 li {
+        width: 33.333%;
+    }
+    .instagram-media.n4 li {
+        width: 25%;
+    }
+    .instagram-media.n5 li {
+        width: 20%;
+    }
+    .instagram-media.n6 li {
+        width: 16.666%;
+    }
+    .instagram-media.n7 li {
+        width: 14.285%;
+    }
+    .instagram-media.n8 li {
+        width: 12.5%;
+    }
     .instagram-media li a {
-      display: block;
-      margin: 4px;
+        display: block;
+        margin: 4px;
     }
     .instagram-media li a img {
-      width: 100%
+        width: 100%;
     }
 }
+
 .block-menu.default {
     .item-add {
         button {
@@ -849,6 +914,7 @@ footer {
         }
     }
 }
+
 .block-menu {
     .menu-title {
         color: $colorD !important;
@@ -874,7 +940,7 @@ footer {
             font-size: 22px;
             margin: 10px;
         }
-        .item-description {
+        .cription {
             color: #333;
             font-size: 14px;
             margin: 10px;
@@ -904,10 +970,12 @@ footer {
         display: block;
         float: left;
         width: 100%;
-        >div {
+        > div {
             position: relative;
             margin: 10px;
-            border: 1px solid #DDD;
+            border: 1px solid $colorA;
+            border-radius: 3px;
+            box-shadow: 0 2px 1px -1px #aaa;
             overflow: hidden;
         }
         .item-image {
@@ -916,29 +984,53 @@ footer {
             .image {
                 width: 100%;
                 height: auto;
+                display: block;
             }
-        }
-        .item-name {
-            color: $colorE;
-            font-size: 22px;
-            font-weight: 700;
-            margin: 4px 0;
-        }
-        .item-description {
-            color: $colorE;
-            font-size: 13px;
-        }
-        .item-variants {
-            .variant {
-                display: inline-block;
-                color: $colorC;
-                font-size: 12px;
-                font-weight: 500;
-                padding-right: 7px;
+            .item-image-shade {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                background-image: linear-gradient(to bottom, transparent 0%, $colorE 100%);
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: center;
+            }
+            .item-name {
+                font-size: 18px;
+                font-weight: 400;
+                margin: 40px 0 4px;
+                text-align: center;
+                a { color: #fff; }
             }
         }
         .item-info {
             padding: 7px;
+            display: flex;
+            .item-flags {
+                img {
+                    margin-right: 2px;
+                }
+            }
+            .item-variants {
+                flex: 1;
+                text-align: right;
+                .variant {
+                    display: inline-block;
+                    color: $colorD;
+                    font-size: 14px;
+                    font-weight: 700;
+                    padding-right: 7px;
+                }
+            }
+        }
+        .item-description {
+            padding: 7px;
+            color: $colorE;
+            font-size: 15px;
+            line-height: 20px;
+            height: 120px;
+            overflow: scroll;
         }
     }
     .item-add {
@@ -956,10 +1048,8 @@ footer {
             width: 100%;
         }
     }
-    .item-info {
-        height: 180px;
-    }
 }
+
 .menu-subsection {
     *zoom: 1;
     clear: both;
@@ -970,6 +1060,7 @@ footer {
         clear: both;
     }
 }
+
 .menu-section {
     &:after {
         display: table;
@@ -978,11 +1069,76 @@ footer {
     }
 }
 
+input.ng-dirty.ng-invalid {
+    background-color: #fee;
+}
+
+.bh-box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0;
+    position: relative;
+    width: auto;
+
+    .box-header {
+        background-color: #F8F8F8;
+        padding: 5px;
+        border-bottom: 1px solid #EEE;
+        h1 {
+            color: #0088CC;
+            font-size: 18px;
+            line-height: 30px;
+            margin: 0;
+        }
+    }
+
+    .box-content {
+        margin: 12px 20px;
+        min-height: 100px;
+    }
+    .box-message {
+        text-align: center;
+        margin: 10px;
+        min-height: 150px;
+        line-height: 150px;
+    }
+    .box-footer {
+        text-align: right;
+        background-color: #F8F8F8;
+        padding: 14px;
+        border-top: 1px solid #EEE;
+
+        button {
+            min-width: 100px;
+        }
+    }
+}
+
+.also-ordered {
+    display: flex;
+    margin-bottom: 20px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    >div {
+        min-width: 100px;
+        text-align: center;
+        border: 1px solid #FAFAFA;
+        padding: 8px;
+        cursor: pointer;
+        width: 120px;
+
+        &:hover {
+            border: 1px solid #CCC;
+        }
+    }
+}
+
+/***********************/
+/**** Media Queries ****/
+/***********************/
 @media (min-width: 468px) {
     .block-menu {
-        .item-info {
-            height: 180px;
-        }
         .menu-item {
             width: 50%;
         }
@@ -996,12 +1152,13 @@ footer {
         }
     }
 }
+
 @media (min-width: 768px) {
     .navbar-delirio {
         .navbar-pages {
             margin-top: 0px;
-            >li {
-                >a {
+            > li {
+                > a {
                     font-size: 14px;
                     padding: 0 10px;
                 }
@@ -1017,19 +1174,10 @@ footer {
         padding-bottom: 40px;
     }
     .block-menu {
-        .item-info {
-            height: 200px;
-        }
         .menu-item {
             width: 33.333%;
         }
-        .item-add {
-            button {
-                width: auto;
-            }
-        }
     }
-
     .navbar-delirio {
         .navbar-brand {
             img {
@@ -1044,11 +1192,12 @@ footer {
         }
     }
 }
+
 @media (min-width: 992px) {
     .navbar-delirio {
         .navbar-pages {
-            >li {
-                >a {
+            > li {
+                > a {
                     font-size: 16px;
                     padding: 4px 20px;
                 }
@@ -1060,10 +1209,11 @@ footer {
         padding-bottom: 60px;
     }
     .block-menu {
-        .item-info {
-            height: 160px;
-        }
+        // .menu-item {
+        //     width: 25%;
+        // }
     }
+
     .navbar-delirio {
         .navbar-brand {
             img {
