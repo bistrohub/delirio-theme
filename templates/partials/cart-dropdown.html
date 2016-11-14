@@ -25,7 +25,7 @@
                         </td>
                         <td class="text-right">
                             <div class="input-group">
-                                <span class="input-group-addon qty-change noselect" ng-click="decrement(item)">-</span><input class="form-control" aria-label="Quantity" type="tel" ng-model="item.qty" min="1" pattern="[0-9]*"><span class="input-group-addon qty-change noselect" ng-click="increment(item)">+</span>
+                                <span class="input-group-addon qty-change noselect" ng-click="decrement(item, $event)">-</span><input class="form-control" aria-label="Quantity" type="tel" ng-model="item.qty" min="1" pattern="[0-9]*"><span class="input-group-addon qty-change noselect" ng-click="increment(item, $event)">+</span>
                             </div>
 
                         </td>
@@ -35,7 +35,7 @@
                             </div>
                          </td>
                         <td>
-                            <a class="remove" ng-click="remove(item)"><i class="fa fa-times"></i></a>
+                            <a class="remove" ng-click="remove(item, $event)"><i class="fa fa-times"></i></a>
                         </td>
                         <td>
                     </tr>

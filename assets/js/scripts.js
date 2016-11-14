@@ -50,7 +50,6 @@
     unveil();
 
     return this;
-
   };
 
 })(window.jQuery);
@@ -77,4 +76,7 @@ $(document).ready(function () {
         $(window).trigger('lookup');
     });
 
+    $('.order-dropdown .dropdown-menu').click(function (e) {
+        e.stopPropagation();
+    });
 });
