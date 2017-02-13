@@ -93,7 +93,34 @@
                     </tr>
                 </tfoot>
             </table>
+
+            <!-- REAL TIME ORDER UPDATE -->
+            <script src="https://cdn.pubnub.com/pubnub-3.5.48.min.js"></script>
+            <script>
+            // Init
+            var pubnub = PUBNUB.init({
+                publish_key: '{{pubnub.publish_key}}',
+                subscribe_key: '{{pubnub.subscribe_key}}',
+                origin: '{{pubnub.origin}}',
+                ssl: {{pubnub.ssl}},
+                channel: '{{pubnub.channel}}',
+            });
+
+            pubnub.subscribe({
+                channel: '{{pubnub.channel}}',
+                callback: function (response) {
+                    console.log(response);
+                    $('.order-status').text(response.status.name);
+                    $('.order-status-message').text(response.status.message);
+                },
+            });
+            </script>
+
+            <div>
+                <h1>Real Time Order Status</h1>
+                <h4>Your Order Status is <b class="order-status">{{status.name}}</b></h4>
+                <p class="order-status-message">{{status.message}}</p>
+            </div>
         </div>
     </section>
-
 {% endblock %}
