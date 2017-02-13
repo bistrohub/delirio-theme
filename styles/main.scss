@@ -1134,10 +1134,18 @@ input.ng-dirty.ng-invalid {
     }
 }
 
+.home-banner {
+    background-image: url(theme-path("img/bg-468w.jpg"));
+}
+
 /***********************/
 /**** Media Queries ****/
 /***********************/
 @media (min-width: 468px) {
+    .home-banner {
+        background-image: url(theme-path("img/bg-800w.jpg"));
+    }
+
     .block-menu {
         .menu-item {
             width: 50%;
@@ -1154,6 +1162,9 @@ input.ng-dirty.ng-invalid {
 }
 
 @media (min-width: 768px) {
+    .home-banner {
+        background-image: url(theme-path("img/bg-1024w.jpg"));
+    }
     .navbar-delirio {
         .navbar-pages {
             margin-top: 0px;
@@ -1194,6 +1205,9 @@ input.ng-dirty.ng-invalid {
 }
 
 @media (min-width: 992px) {
+    .home-banner {
+        background-image: url(theme-path("img/bg.jpg"));
+    }
     .navbar-delirio {
         .navbar-pages {
             > li {

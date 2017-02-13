@@ -17,11 +17,6 @@
             "label": "Slogan",
             "default": "Delicious Food"
         },
-        "home_background": {
-            "type": "image",
-            "label": "Home Background Logo",
-            "default": "img/bg.jpg"
-        },
         "navbar_fixed": {
             "type": "toggle",
             "label": "Fixed Navigation Header",
@@ -71,7 +66,7 @@
         },
         {
             "label": "Images",
-            "fields": ["nav_logo", "home_background", "home_image", "footer_logo"]
+            "fields": ["nav_logo", "home_image", "footer_logo"]
         }
     ]
 }
