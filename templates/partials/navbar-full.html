@@ -1,39 +1,57 @@
-<div class="navbar-container">
+<nav class="navbar {% if home == true %}navbar-transparent{% endif %}" role="navigation">
     {% include "partials/color-bar.html" %}
     <div class="container">
-        <nav class="navbar navbar-delirio" role="navigation">
-            <div class="navbar-header clearfix">
-                <a class="navbar-brand" href="/">
+        <div class="navbar-mobile">
+            <div class="navbar-mobile-toggle">
+                <button type="button" class="btn" onclick="showNavigation()">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="navbar-mobile-logo">
+                <a href="/">
+                    <img src="{{ fields.nav_logo_mobile }}" data-custom-field="src:nav_logo_mobile" alt="{{ name }}">
+                </a>
+            </div>
+            <div class="navbar-mobile-cart" cart>
+                <button type="button" class="btn" onclick="showSideCart()">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="badge ng-cloak" ng-show="cart.items.length" ng-bind="cart.items.length"></span>
+                </button>
+            </div>
+        </div>
+        <div class="navbar-desktop">
+            <div class="navbar-desktop-logo">
+                <a href="/">
                     <img src="{{ fields.nav_logo }}" data-custom-field="src:nav_logo" alt="{{ name }}">
                 </a>
-
-                <div class="visible-xs-inline-block order-count">
-                    <div cart>
-                        <a href="/cart" ng-show="cart.items.length">
-                            My Order
-                            <span class="badge ng-cloak" ng-bind="cart.items.length"></span>
-                        </a>
+            </div>
+            <div class="navigation">
+                <div class="navigation-header">
+                    <button type="button" onclick="hideNavigation()">
+                        <span class="sr-only">Close Navigation</span>
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <div class="navigation-pages">{% include "partials/navigation.html" %}</div>
+                <div class="navigation-customer">
+                    {% include "partials/customer-menu.html" %}
+                    <div class="navbar-desktop-cart" cart>
+                        <button type="button" class="btn" onclick="showSideCart()">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="badge ng-cloak" ng-show="cart.items.length" ng-bind="cart.items.length"></span>
+                        </button>
                     </div>
                 </div>
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
             </div>
-
-            <div class="customer-nav-wrapper hidden-xs">
-                {% include "partials/customer-menu.html" %}
-
-                {% include "partials/cart-dropdown.html" %}
-            </div>
-
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                {% include "partials/navigation.html" %}
-            </div>
-
-        </nav>
+        </div>
+        <div class="sidecart">
+            <button type="button" class="hide-navigation" onclick="hideSideCart()">
+                <span class="sr-only">Close Cart</span>
+                <i class="fa fa-close"></i>
+            </button>
+            {% include "partials/cart-dropdown.html" %}
+        </div>
     </div>
-</div>
+</nav>

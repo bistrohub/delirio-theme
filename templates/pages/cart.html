@@ -1,16 +1,12 @@
 {% extends "layouts/full-page.html"  %}
 
 {% block content %}
-
     {% raw %}
-
     <section class="main-content">
         <div class="container">
             <div cart id="cart" class="order-view">
                 <h1>My Order</h1>
-
                 <div ng-hide="cart.items.length">No Items in your order</div>
-
                 <div ng-show="cart.items.length">
                     <table class="table">
                         <tbody>
@@ -78,5 +74,4 @@
         </div>
     </section>
     {% endraw %}
-
 {% endblock %}

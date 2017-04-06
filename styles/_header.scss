@@ -1,0 +1,113 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    margin-bottom: 0;
+    border: none;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 1px 1px 1px 1px #eee;
+
+    &.navbar-transparent {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+body.scrolled .navbar.navbar-transparent {
+    @media (min-width: 768px) {
+        background-color: white;
+        box-shadow: 1px 1px 1px 1px #eee;
+    }
+}
+
+.navbar-mobile {
+    margin-right: -15px;
+    margin-left: -15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $colorF;
+
+    .navbar-mobile-toggle,
+    .navbar-mobile-logo,
+    .navbar-mobile-cart {
+        order: 1;
+    }
+
+    .navbar-mobile-toggle {
+        flex: 1;
+        margin-left: 4px;
+    }
+    .navbar-mobile-logo img {
+        width: 35px;
+    }
+    .navbar-mobile-cart {
+        flex: 1;
+        margin-right: 4px;
+        text-align: right;
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.navbar-desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .navbar-desktop-logo,
+    .navbar-desktop-cart {
+        display: none;
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+    .navbar-desktop-logo img {
+        max-height: 60px;
+    }
+}
+
+.sidecart {
+    @include sidenavigation(100%);
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 20px;
+    @media (max-width: 768px) {
+        @include sidenavigation(-100%);
+    }
+    @media (min-width: 768px) {
+        padding: 0;
+        flex: 1;
+    }
+
+    .navigation-header {
+        text-align: right;
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    .navigation-customer {
+        border-top: 1px solid $colorG;
+        @media (min-width: 768px) {
+            order: -1;
+            border-top: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

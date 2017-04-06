@@ -1,6 +1,6 @@
-<ul class="nav navbar-nav navbar-pages">
+<ul class="navbar-pages">
     {% for a in navigation %}
-    <li class="{{ a.active ? 'active' : '' }}">
+    <li class="navbar-pages-root {{ a.active ? 'active' : '' }}">
         <a href="{{ a.path }}">{{ a.name }}</a>
         {% if a.pages %}
         <ul>
@@ -12,14 +12,14 @@
                     {% for c in b.pages %}
                     <li class="{{ c.active ? 'active' : '' }}">
                         <a href="{{ c.path }}">{{ c.name }}</a>
-                    </li> 
+                    </li>
                     {% endfor %}
                 </ul>
                 {% endif %}
-            </li> 
+            </li>
             {% endfor %}
         </ul>
         {% endif %}
-    </li> 
+    </li>
     {% endfor %}
 </ul>

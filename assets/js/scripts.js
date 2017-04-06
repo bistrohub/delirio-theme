@@ -9,49 +9,46 @@
  */
 
 ;(function($) {
+    $.fn.unveil = function(threshold, callback) {
+        var $w = $(window);
+        var th = threshold || 0;
+        var retina = window.devicePixelRatio > 1;
+        var attrib = retina ? "data-src-retina" : "data-src";
+        var images = this;
+        var loaded;
 
-  $.fn.unveil = function(threshold, callback) {
+        this.one("unveil", function() {
+            var source = this.getAttribute(attrib);
+            source = source || this.getAttribute("data-src");
+            if (source) {
+                this.setAttribute("src", source);
+                if (typeof callback === "function") callback.call(this);
+            }
+        });
 
-    var $w = $(window),
-        th = threshold || 0,
-        retina = window.devicePixelRatio > 1,
-        attrib = retina? "data-src-retina" : "data-src",
-        images = this,
-        loaded;
+        function unveil() {
+            var inview = images.filter(function() {
+                var $e = $(this);
+                if ($e.is(":hidden")) return;
 
-    this.one("unveil", function() {
-      var source = this.getAttribute(attrib);
-      source = source || this.getAttribute("data-src");
-      if (source) {
-        this.setAttribute("src", source);
-        if (typeof callback === "function") callback.call(this);
-      }
-    });
+                var wt = $w.scrollTop(),
+                    wb = wt + $w.height(),
+                    et = $e.offset().top,
+                    eb = et + $e.height();
 
-    function unveil() {
-      var inview = images.filter(function() {
-        var $e = $(this);
-        if ($e.is(":hidden")) return;
+                return eb >= wt - th && et <= wb + th;
+            });
 
-        var wt = $w.scrollTop(),
-            wb = wt + $w.height(),
-            et = $e.offset().top,
-            eb = et + $e.height();
+            loaded = inview.trigger("unveil");
+            images = images.not(loaded);
+        }
 
-        return eb >= wt - th && et <= wb + th;
-      });
+        $w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
 
-      loaded = inview.trigger("unveil");
-      images = images.not(loaded);
-    }
+        unveil();
 
-    $w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
-
-    unveil();
-
-    return this;
-  };
-
+        return this;
+    };
 })(window.jQuery);
 
 $(document).ready(function () {
@@ -61,7 +58,7 @@ $(document).ready(function () {
     //         forceHeight: false,
     //     });
     // }
-    
+
     // scroll body to 0px on click
     $('#back-to-top').click(function () {
         $('body,html').animate({
@@ -79,4 +76,33 @@ $(document).ready(function () {
     $('.order-dropdown .dropdown-menu').click(function (e) {
         e.stopPropagation();
     });
+
+    window.addEventListener('scroll', function (e) {
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+        var shrinkOn = 230;
+        var $navbar = $('body');
+
+        if (distanceY > shrinkOn) {
+            $navbar.addClass('scrolled');
+        } else {
+            $navbar.removeClass('scrolled');
+        }
+    });
 });
+
+function showNavigation() {
+    $('.navigation').css({ left: 0 });
+}
+
+function hideNavigation() {
+    $('.navigation').css({ left: "-100%" });
+}
+
+function showSideCart() {
+    $('.sidecart').css({ left: 0 });
+}
+
+function hideSideCart() {
+    $('.sidecart').css({ left: "100%" });
+}
+

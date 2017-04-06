@@ -1,22 +1,17 @@
 <ul class="customer-nav">
-
     {% if customer %}
-
     <li class="customer-nav-logout">
         <a href="/customer/logout">logout</a>
     </li>
     <li class="customer-nav-account">
         <a href="/customer">my account</a>
     </li>
-
     {% else %}
-
     <li class="customer-nav-login">
         <a href="/login">login</a>
     </li>
     <li class="customer-nav-signup">
         <a href="/login/signup">create account</a>
     </li>
-
     {% endif %}
 </ul>

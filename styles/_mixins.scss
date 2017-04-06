@@ -1,0 +1,15 @@
+@mixin sidenavigation($left) {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    -webkit-transition: all .5s cubic-bezier(.4,.7,.4,1.1);
+    -moz-transition: all .5s cubic-bezier(.4,.7,.4,1.1);
+    -o-transition: all .5s cubic-bezier(.4,.7,.4,1.1);
+    transition: all .5s cubic-bezier(.4,.7,.4,1.1);
+    box-shadow: 1px 1px 1px 1px #eee;
+    left: $left;
+}
