@@ -1,0 +1,72 @@
+.food-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .menu-name {
+        width: 100%;
+        margin: 30px 0 10px;
+    }
+}
+
+.menu-section {
+    text-align: center;
+    margin: 20px 0 15px;
+    width: 100%;
+    .section-name {
+        color: $colorD;
+        text-decoration: underline;
+        margin: 4px 8px;
+    }
+    .section-description {
+        color: #777;
+    }
+}
+
+.menu-subsection {
+    width: 100%;
+    border: 1px solid blue;
+    .subsection-name {
+        color: $colorC;
+        margin: 0 0;
+    }
+}
+
+.menu-item {
+    cursor: pointer;
+    flex-basis: 100%;
+    margin: 0 0 16px;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    @media (min-width: 768px) {
+        flex-basis: 50%;
+    }
+    &:hover {
+        border: 1px solid $colorA;
+    }
+
+    .item-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        .item-name {
+            margin-right: auto;
+            color: $colorD;
+        }
+        .item-variants {
+            margin-left: auto;
+            color: $colorA;
+        }
+    }
+
+    .item-flags {
+        vertical-align: text-bottom;
+    }
+    .item-description {
+        color: #AAA;
+        transition: all 0.3s;
+    }
+    &:hover .item-description {
+        color: #777;
+    }
+}

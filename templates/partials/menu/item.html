@@ -1,0 +1,37 @@
+    <!-- <img class="image" src="{{ theme.path }}/img/menu-placeholder.png" {% if item.photo %}data-src="{{ item.photo }}"{% endif %}> -->
+<div class="menu-item" data-add-menu-item="{{ item.id }}">
+    <div class="item-header">
+        <div class="item-name">
+            {{ item.name | e }}
+            <span class="item-flags">
+                {% if item.flag_recommended %}<img src="{{ theme.path }}/img/star.png" alt="recommended">{% endif %}
+                {% if item.flag_spicy %}<img src="{{ theme.path }}/img/spicy.png" alt="spicy">{% endif %}
+                {% if item.flag_veggie %}<img src="{{ theme.path }}/img/veggie.png" alt="veggie">{% endif %}
+                {% if item.flag_healthy %}<img src="{{ theme.path }}/img/healthy.png" alt="healthy">{% endif %}
+            </span>
+        </div>
+        <div class="item-variants">
+            {% for variant in item.variants %}
+                <span class="variant">
+                    {% if item.variants|length > 1 %}
+                        <span class="variant-name">
+                            {{ variant.name }}
+                        </span>
+                    {% endif %}
+                    {% if variant.price > 0 %}
+                        <b class="variant-price">
+                            {{ variant.price  | currency }}
+                        </b>
+                    {% endif %}
+                </span>
+                {% if not loop.last %}
+                    <span>/</span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="item-description">
+
+        {{ item.description }}
+    </div>
+</div>

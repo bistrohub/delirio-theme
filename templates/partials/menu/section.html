@@ -1,0 +1,15 @@
+<div class="menu-section">
+    <h3 class="section-name">{{ section.name | e }}</h3>
+    <div class="section-description">{{ section.description }}</div>
+    {% if section.times.today.times.length %}
+        <div class="serving-hours">
+            <i class="fa fa-clock-o"></i>
+            <b>Serving hours: </b>
+            {% for time in section.times.today.times %}
+                <span>
+                    {{ time.start }} - {{ time.end }}
+                </span>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
