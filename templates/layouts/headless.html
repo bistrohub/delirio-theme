@@ -1,13 +1,18 @@
-{% extends "layouts/base.html"  %}
-
-{% block body %}
+<!DOCTYPE html>
+<html>
+{% include "partials/head.html"  %}
+<body>
+    {{ body }}
 
     {% include "partials/navbar-simple.html"  %}
 
     {% block content %}{% endblock %}
 
     {% block footer %}
-    	{% include "partials/footer.html"  %}
+        {% include "partials/footer.html"  %}
     {% endblock %}
 
-{% endblock %}
+    {{ footer }}
+    {{ theme.scripts }}
+</body>
+</html>

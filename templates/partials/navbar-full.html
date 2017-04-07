@@ -3,7 +3,7 @@
     <div class="container">
         <div class="navbar-mobile">
             <div class="navbar-mobile-toggle">
-                <button type="button" class="btn" onclick="showNavigation()">
+                <button type="button" class="btn show-navigation">
                     <span class="sr-only">Toggle Navigation</span>
                     <i class="fa fa-bars"></i>
                 </button>
@@ -14,7 +14,7 @@
                 </a>
             </div>
             <div class="navbar-mobile-cart" cart>
-                <button type="button" class="btn" onclick="showSideCart()">
+                <button type="button" class="btn show-quick-order">
                     <i class="fa fa-shopping-cart"></i>
                     <span class="badge ng-cloak" ng-show="cart.items.length" ng-bind="cart.items.length"></span>
                 </button>
@@ -28,7 +28,7 @@
             </div>
             <div class="navigation">
                 <div class="navigation-header">
-                    <button type="button" onclick="hideNavigation()">
+                    <button type="button" class="hide-navigation">
                         <span class="sr-only">Close Navigation</span>
                         <i class="fa fa-close"></i>
                     </button>
@@ -37,7 +37,7 @@
                 <div class="navigation-customer">
                     {% include "partials/customer-menu.html" %}
                     <div class="navbar-desktop-cart" cart>
-                        <button type="button" class="btn" onclick="showSideCart()">
+                        <button type="button" class="btn show-quick-order">
                             <i class="fa fa-shopping-cart"></i>
                             <span class="badge ng-cloak" ng-show="cart.items.length" ng-bind="cart.items.length"></span>
                         </button>
@@ -46,12 +46,12 @@
 
             </div>
         </div>
-        <div class="sidecart">
-            <button type="button" class="hide-navigation" onclick="hideSideCart()">
+        <div class="quick-order">
+            <button type="button" class="hide-navigation hide-quick-order">
                 <span class="sr-only">Close Cart</span>
                 <i class="fa fa-close"></i>
             </button>
-            {% include "partials/cart-dropdown.html" %}
+            {% include "partials/quick-order.html" %}
         </div>
     </div>
 </nav>

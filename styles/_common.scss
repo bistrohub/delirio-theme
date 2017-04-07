@@ -634,20 +634,6 @@ i.creditcard.diners {
     }
 }
 
-#back-to-top {
-    margin: 0 0 7px;
-    color: $colorF;
-    display: block;
-    &:hover {
-        text-decoration: none;
-        color: $colorF;
-    }
-    &:focus {
-        text-decoration: none;
-        color: $colorF;
-    }
-}
-
 [data-adaptive-bg] {
     opacity: 0;
 }
@@ -665,36 +651,6 @@ i.creditcard.diners {
 .btn-order-online {
     font-size: 20px;
     font-weight: 600;
-}
-
-footer {
-    background: $colorA;
-    color: $colorF;
-    font-size: 24px;
-    line-height: 24px;
-    .container {
-        padding: 40px 0;
-    }
-    ul.footer-nav {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        > li {
-            padding: 0;
-            margin: 0 0 20px 0;
-            > a {
-                color: $colorF;
-                font-size: 20px;
-                line-height: 24px;
-            }
-        }
-    }
-    a {
-        color: $colorF;
-        &:hover {
-            color: $colorF;
-        }
-    }
 }
 
 .block-contact {

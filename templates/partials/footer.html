@@ -1,66 +1,45 @@
+{% include 'partials/color-bar.html' %}
 <footer style="background-color: {{fields.colorA}}" data-custom-field="background-color:colorA">
-    {% include 'partials/color-bar.html' %}
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 hidden-xs">
-                <div>
-                    <img src="{{ fields.footer_logo }}" data-custom-field="src:footer_logo">
-                </div>
-            </div>
-            <div class="col-sm-4">
-              	<blockquote>
-                  <p><strong>2475 NW 95th Ave<br />
-                  Unit 8<br />
-                  Doral, FL 33172</strong></p>
-                  <p><strong><a href="mailto:info@deliriofreshco.com">info@deliriofreshco.com</a></strong></p>
-                  <p>Phone: <strong>(305) 499-3304</strong></p>
-                </blockquote>
-                <ul class="footer-nav">
-                    <!--
-                    <li><a href="sites/privacy.html">Privacy</a>
-                    </li>
-                    <li><a href="sites/terms.html">Terms</a>
-                    </li>
-                    <li><a href="press.html">Press</a>
-                    </li>
-                    -->
-                </ul>
-            </div>
-            <div class="col-sm-2">
-                <ul class="footer-nav">
-                    <li><a href="/contactus">Feedback</a></li>
-                    <li><a href="/location">Location</a></li>
-                    <!--
-                    <li><a href="/menu">Menu</a></li>
-                    -->
-                </ul>
-            </div>
-            <div class="col-sm-3 text-right hidden-xs">
-                <div>
-                  <a id="back-to-top" href="javascript:void(0);">
-                    <i class="fa fa-arrow-circle-o-up"></i> BACK TO TOP
-                  </a>
-                </div>
-                <div class="m-t-lg social">
-                    <a href="http://www.facebook.com/deliriofreshco" target="_blank">
-                        <img src="{{ theme.path }}/img/social-facebook.png">
-                    </a>
-                    <a href="https://www.instagram.com/delirio_freshco" target="_blank">
-                        <img src="{{ theme.path }}/img/social-instagram.png">
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-3 text-left visible-xs">
-                <div class="m-t-lg social">
-                    <a href="http://www.facebook.com/deliriofreshco" target="_blank">
-                        <img src="{{ theme.path }}/img/social-facebook.png">
-                    </a>
-                    <a href="https://www.instagram.com/delirio_freshco" target="_blank">
-                        <img src="{{ theme.path }}/img/social-instagram.png">
-                    </a>
-                </div>
-                <div class="m-t-sm">&copy; 2014 Delirio Fresh Co.</div>
+    <div class="container footer">
+        <div class="footer-logo">
+            <img src="{{ fields.footer_logo }}" data-custom-field="src:footer_logo">
+        </div>
+        <div class="footer-address">
+            <b>Address</b>
+            <p>2475 NW 95th Ave</p>
+            <p>Unit 8</p>
+            <p>Doral, FL 33172</p>
+            <p>Phone: (305) 499-3304</p>
+        </div>
+        <div class="footer-hours">
+            <b>Hours</b>
+            {% for hours in time.week_summary %}
+                <p>
+                    {{ hours.day_start | capitalize }}
+                    {% if hours.day_end %}
+                        - {{ hours.day_end | capitalize }}
+                    {% endif %}
+                    {% for time in hours.times %}
+                        <b>{{ time.start }} - {{ time.end }}</b>
+                    {% endfor %}
+                </p>
+            {% endfor %}
+            <p><a href="mailto:info@deliriofreshco.com">info@deliriofreshco.com</a></p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="/contactus">Feedback</a></li>
+                <li><a href="/location">Location</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="http://www.facebook.com/deliriofreshco" target="_blank">
+                    <img src="{{ theme.path }}/img/social-facebook.png">
+                </a>
+                <a href="https://www.instagram.com/delirio_freshco" target="_blank">
+                    <img src="{{ theme.path }}/img/social-instagram.png">
+                </a>
             </div>
         </div>
     </div>
+    <div class="footer-copywrite">&copy; 2017 Delirio Fresh Co.</div>
 </footer>

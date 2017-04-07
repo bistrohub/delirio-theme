@@ -2,7 +2,11 @@
 {% set home = true %}
 
 {% block content %}
-    <div class="home-banner">
+    <div id="home-banner" class="home-banner"
+        data-center="background-position: 50% 0px;"
+        data-top-bottom="background-position: 50% -100px;"
+        data-anchor-target="#home-banner"
+    >
         <div>
             <h1 class="title">
                 <img src="{{ fields.home_image }}" data-custom-field="src:home_image"><br>
