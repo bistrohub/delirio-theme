@@ -85,6 +85,22 @@ $(document).ready(function () {
         $('body').css({ overflow: 'visible' })
     });
 
+    $('.menu-item').popover({
+        html: true,
+        trigger: 'hover',
+        placement: 'auto bottom',
+        delay: { show: 500, hide: 0 },
+        content: function () {
+            return $(this).data('image')
+                ? '<img class="popover-image" src="' + $(this).data('image') + '">'
+                : null;
+        }
+    });
+
+    $('.menu-item').click(function () {
+        $(this).popover('hide');
+    });
+
     window.addEventListener('scroll', function (e) {
         var distanceY = window.pageYOffset || document.documentElement.scrollTop;
         var shrinkOn = 230;

@@ -1,5 +1,5 @@
     <!-- <img class="image" src="{{ theme.path }}/img/menu-placeholder.png" {% if item.photo %}data-src="{{ item.photo }}"{% endif %}> -->
-<div class="menu-item" data-add-menu-item="{{ item.id }}">
+<div class="menu-item" data-add-menu-item="{{ item.id }}" data-image="{{ item.photo }}">
     <div class="item-header">
         <div class="item-name">
             {{ item.name | e }}
