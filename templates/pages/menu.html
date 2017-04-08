@@ -4,8 +4,10 @@
     <section class="main-content">
         <div class="container">
             {% for menu in menus %}
-                <div class="food-menu">
-                    <h1 class="menu-name">{{ menu.name }}</h1>
+                <div class="food-menu" id="{{ menu.slug }}">
+                    <h1 class="menu-name">
+                        <a href="#{{ menu.slug }}">{{ menu.name }}</a>
+                    </h1>
                     {% include "partials/color-bar.html" %}
                     {% for item in menu.content %}
                         {% if item.type == 'section' %}
