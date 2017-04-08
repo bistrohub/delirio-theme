@@ -103,7 +103,7 @@ body.scrolled .navbar.navbar-transparent {
         @include sidenavigation(-100%);
     }
     @media (min-width: 768px) {
-        padding: 0;
+        padding: 0 0 5px;
         flex: 1;
     }
 
@@ -139,18 +139,20 @@ body.scrolled .navbar.navbar-transparent {
 .navbar-checkout {
     background-color: #fff;
     .container {
-        position: relative;
         text-align: center;
         .navbar-checkout-logo {
-            position: absolute;
-            top: 0;
-            left: 0;
             img {
-                max-height:  60px;
+                max-height:  40px;
+                @media (min-width: 768px) {
+                    max-height: 60px;
+                }
             }
         }
         .navbar-checkout-lock {
-            height: 48px;
+            max-height: 32px;
+            @media (min-width: 768px) {
+                max-height: 48px;
+            }
         }
     }
 }
