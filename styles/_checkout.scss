@@ -1,0 +1,126 @@
+.checkout {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .checkout-title {
+        flex-basis: 100%;
+    }
+    .order-summary {
+        flex: 2;
+    }
+    .order-form {
+        flex: 3;
+    }
+}
+
+.order-summary {
+    border: 1px solid #AAA;
+    font-size: 12px;
+    .order-summary-heading {
+        border-bottom: 1px solid #AAA;
+        padding: 12px;
+        position: relative;
+        &:after {
+            font-family: 'FontAwesome';
+            font-size: 22px;
+            content: "\f055";
+            color: #7EC243;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 15px;
+            height: 100%;
+            cursor: pointer;
+        }
+        .order-summary-title h3 {
+            font-size: 18px;
+        }
+    }
+
+    .order-summary-body {
+        overflow: hidden;
+        height: 0;
+        -webkit-transition: height 0.8s;
+        -moz-transition: height 0.8s;
+        transition: height 0.8s;
+    }
+
+    &.open {
+        .order-summary-heading:after {
+            content: "\f056";
+        }
+        .order-summary-body {
+            height: auto;
+        }
+    }
+}
+
+
+.order-summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+
+    .order-summary-item-qty {
+        flex-basis: 22px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .order-summary-item-desc {
+        flex: 1;
+        p {
+            color: $colorD;
+            margin: 0;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            color: #AAA;
+            li {
+                list-style-type: none;
+                margin-left: 5px;
+            }
+        }
+    }
+    .order-summary-item-amount {
+        flex-basis: 50px;
+        font-weight: 700;
+        text-align: right;
+        color: $colorA;
+        @media (min-width: 480px) {
+            flex-basis: 100px;
+        }
+    }
+}
+
+.order-summary-lineitems {
+    padding: 6px;
+    .order-summary-subtotal,
+    .order-summary-lineitem,
+    .order-summary-total {
+        text-align: right;
+        font-weight: 700;
+        display: flex;
+        justify-content: flex-end;
+        span:nth-child(1) {
+            color: $colorD;
+        }
+        span:nth-child(2) {
+            flex-basis: 60px;
+            text-align: right;
+            color: $colorA;
+        }
+    }
+}
+
+.order-summary-actions {
+    padding: 10px;
+    text-align: center;
+    a {
+        text-decoration: underline;
+    }
+}

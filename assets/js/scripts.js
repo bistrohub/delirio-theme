@@ -78,6 +78,15 @@ $(document).ready(function () {
         $('body').css({ overflow: 'visible' })
     });
 
+    $('.order-summary-heading').click(function () {
+        var $el = $('.order-summary');
+        if ($el.hasClass('open')) {
+            $el.removeClass('open');
+        } else {
+            $el.addClass('open');
+        }
+    });
+
     $('.menu-item').popover({
         html: true,
         trigger: 'hover',
