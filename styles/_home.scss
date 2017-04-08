@@ -20,14 +20,14 @@
         color: #FFF;
     }
 
-    background-image: url(theme-path("img/bg-468w.jpg"));
+    background-image: url(theme-path("img/hero-468w.jpg"));
 
     @media (min-width: 468px) {
-        background-image: url(theme-path("img/bg-800w.jpg"));
+        background-image: url(theme-path("img/hero-800w.jpg"));
     }
 
     @media (min-width: 768px) {
-        background-image: url(theme-path("img/bg-1024w.jpg"));
+        background-image: url(theme-path("img/hero-1024w.jpg"));
         height: 500px;
         .title {
             font-size: 40px;
@@ -35,7 +35,7 @@
     }
 
     @media (min-width: 992px) {
-        background-image: url(theme-path("img/bg.jpg"));
+        background-image: url(theme-path("img/hero-large.jpg"));
         height: 900px;
         .title {
             font-size: 40px;
