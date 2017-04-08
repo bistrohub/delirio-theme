@@ -52,13 +52,6 @@
 })(window.jQuery);
 
 $(document).ready(function () {
-    // don't use skrollr on mobile / tablet
-    if ($(window).width() >= 1480 && typeof(skrollr) === 'object') {
-        var s = skrollr.init({
-            forceHeight: false,
-        });
-    }
-
     $('img').unveil();
 
     $('[data-toggle="tab"]').on('shown.bs.tab', function (e) {

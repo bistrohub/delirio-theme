@@ -3,7 +3,6 @@
     "author": "Mario Campa <mcampa@bistrohub.com>",
     "scripts": [
         "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.21/skrollr.min.js",
         "js/scripts.js"
     ],
     "fields": {

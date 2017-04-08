@@ -5,8 +5,7 @@
     <div id="home-banner" class="home-banner"
         data-center="background-position: 50% 0px;"
         data-top-bottom="background-position: 50% -100px;"
-        data-anchor-target="#home-banner"
-    >
+        data-anchor-target="#home-banner">
         <div>
             <h1 class="title">
                 <img src="{{ fields.home_image }}" data-custom-field="src:home_image"><br>
@@ -17,6 +16,18 @@
             {{ content('home-hero') }}
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.21/skrollr.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // don't use skrollr on mobile / tablet
+            if ($(window).width() >= 1480 && typeof(skrollr) === 'object') {
+                var s = skrollr.init({
+                    forceHeight: false,
+                });
+            }
+        });
+    </script>
     <section class="main-content">
         <div class="container">
             {{ content("main") }}
