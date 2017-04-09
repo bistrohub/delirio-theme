@@ -91,3 +91,94 @@
         color: #777;
     }
 }
+
+
+/* Menu modal */
+.menu-item-modal {
+    .modal-header {
+        h1 {
+            color: $colorD;
+            font-size: 24px;
+        }
+    }
+    .modal-footer {
+        button {
+            background-color: $colorD;
+            color: $colorF;
+            cursor: pointer;
+            margin: 7px;
+        }
+    }
+    .modal-content {
+        margin: 0px 20px;
+        min-height: 80px;
+        font-size: 14px;
+        color: $colorE;
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 7px 0;
+        }
+    }
+    .choices {
+        label {
+            font-size: 12px;
+            i {
+                font-weight: 600;
+            }
+        }
+        .checkbox {
+            margin-bottom: 4px;
+        }
+    }
+    .options {
+        h3 {
+            display: inline-block;
+            margin-right: 14px;
+        }
+        .radio {
+            display: inline-block;
+            margin: 0 20px;
+        }
+    }
+    fieldset {
+        padding: 0 14px 0;
+        .checkbox {
+            width: 50%;
+            display: inline-block;
+        }
+    }
+    legend {
+        font-size: 14px;
+        font-weight: 600;
+        position: relative;
+        margin: 0;
+        left: -14px;
+    }
+    .note {
+        label {
+            display: block;
+        }
+    }
+    .qty {
+        min-width: 150px;
+        width: 150px;
+        display: inline-block;
+        margin-top: 0px;
+        padding: 0;
+        vertical-align: middle;
+        input {
+            text-align: center;
+            font-weight: 500;
+        }
+    }
+    .qty-change {
+        cursor: pointer;
+    }
+}
+
+.item-add {
+    button {
+        background-color: $colorA !important;
+    }
+}

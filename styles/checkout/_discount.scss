@@ -1,0 +1,43 @@
+.checkout-form-discount {
+    padding: 10px 0;
+    margin: 20px 0;
+    padding: 0;
+
+    .form-group {
+        display: flex;
+        flex-direction: row;
+        .text-input {
+            flex: 1;
+            margin-right: 10px;
+            &:last-child {
+                margin-right: 0;
+            }
+
+            label {
+                max-width: 100%;
+                margin: 5px 0 0 5px;
+                color: $colorA;
+                font-size: 12px;
+            }
+        }
+
+        &.discount-checkbox {
+            display: flex;
+            justify-content: center;
+            input[type=checkbox] {
+                @include checkout-radio();
+            }
+        }
+
+
+        &.discount-coupon button {
+            background-color: none;
+            text-decoration: underline;
+            color: $colorD;
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+}
+
+

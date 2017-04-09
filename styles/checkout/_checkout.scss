@@ -1,0 +1,44 @@
+.checkout-title {
+    flex-basis: 100%;
+    text-align: center;
+}
+.checkout {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .checkout-form {
+        margin: 0 auto;
+        fieldset {
+            margin: 20px auto;
+            padding: 20px 10px;
+            border: 1px solid $border-color;
+        }
+        legend {
+            color: #EC008B;
+            padding: 0 10px;
+            margin: 0;
+            background-color: white;
+            display: inline;
+            width: auto;
+        }
+
+        .checkout-form-submit {
+            border: none;
+            .checkout-form-toc {
+                font-size: 14px;
+                $colorG:
+            }
+            .checkout-form-button button {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@import "order-summary";
+@import "order-type";
+@import "order-schedule";
+@import "order-address";
+@import "gratitude";
+@import "discount";
+@import "payment";

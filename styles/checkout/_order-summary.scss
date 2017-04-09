@@ -1,23 +1,12 @@
-.checkout {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    .checkout-title {
-        flex-basis: 100%;
-    }
-    .order-summary {
-        flex: 2;
-    }
-    .order-form {
-        flex: 3;
-    }
-}
-
 .order-summary {
-    border: 1px solid #AAA;
+    border: 1px solid $border-color;
     font-size: 12px;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+        font-size: 18px;
+    }
     .order-summary-heading {
-        border-bottom: 1px solid #AAA;
+        border-bottom: 1px solid $border-color;
         padding: 12px;
         position: relative;
         &:after {
@@ -87,12 +76,12 @@
         }
     }
     .order-summary-item-amount {
-        flex-basis: 50px;
+        flex-basis: 60px;
         font-weight: 700;
         text-align: right;
         color: $colorA;
-        @media (min-width: 480px) {
-            flex-basis: 100px;
+        @media (min-width: 768px) {
+            flex-basis: 120px;
         }
     }
 }
@@ -113,6 +102,9 @@
             flex-basis: 60px;
             text-align: right;
             color: $colorA;
+            @media (min-width: 768px) {
+                flex-basis: 120px;
+            }
         }
     }
 }

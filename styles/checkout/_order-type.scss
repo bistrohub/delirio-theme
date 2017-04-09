@@ -1,0 +1,12 @@
+.checkout-form-order-type {
+    .form-group {
+        display: flex;
+        justify-content: center;
+
+        input[type=radio] {
+            @include checkout-radio();
+        }
+    }
+}
+
+

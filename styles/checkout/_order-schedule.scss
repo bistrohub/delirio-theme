@@ -1,0 +1,11 @@
+.checkout-form-order-schedule {
+
+    .form-group {
+        display: flex;
+        justify-content: center;
+
+        input[type=radio] {
+            @include checkout-radio();
+        }
+    }
+}
