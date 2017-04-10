@@ -34,7 +34,7 @@
     }
     .section-description {
         color: #777;
-        font-size: 12px;
+        font-size: 14px;
         @media (min-width: 768px) {
             font-size: 16px;
         }
@@ -57,7 +57,7 @@
     padding: 8px 16px;
     border: 1px solid transparent;
     transition: all 0.3s;
-    font-size: 12px;
+    font-size: 14px;
     @media (min-width: 768px) {
         font-size: 18px;
         flex-basis: 50%;
@@ -95,34 +95,58 @@
 
 /* Menu modal */
 .menu-item-modal {
-    .modal-header {
-        h1 {
-            color: $colorD;
-            font-size: 24px;
+    // .modal-header {
+    //     h1 {
+    //         color: $colorD;
+    //         font-size: 24px;
+    //     }
+    // }
+    // .modal-footer {
+    //     button {
+    //         background-color: $colorD;
+    //         color: $colorF;
+    //         cursor: pointer;
+    //         margin: 7px;
+    //     }
+    // }
+    // .modal-content {
+    //     margin: 0px 20px;
+    //     min-height: 80px;
+    //     font-size: 14px;
+    //     color: $colorE;
+    //     h3 {
+    //         font-size: 20px;
+    //         font-weight: 600;
+    //         margin: 7px 0;
+    //     }
+    // }
+    .menu-item-modal-image {
+        text-align: center;
+        background-color: #EEE;
+        width: 100%;
+        min-height: 300px;
+        img {
+            max-width: 100%;
         }
     }
-    .modal-footer {
-        button {
-            background-color: $colorD;
-            color: $colorF;
-            cursor: pointer;
-            margin: 7px;
-        }
-    }
-    .modal-content {
-        margin: 0px 20px;
-        min-height: 80px;
+    .menu-item-modal-description {
+        text-align: center;
         font-size: 14px;
-        color: $colorE;
-        h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin: 7px 0;
-        }
+        margin: 6px 0 6px;
+        font-color: $colorG;
     }
-    .choices {
+    .menu-item-modal-price {
+        color: $colorA;
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+    }
+    .menu-item-modal-loading {
+        min-height: 200px;
+    }
+    .menu-item-modal-choices {
         label {
-            font-size: 12px;
+            font-size: 14px;
             i {
                 font-weight: 600;
             }
@@ -131,33 +155,38 @@
             margin-bottom: 4px;
         }
     }
-    .options {
-        h3 {
-            display: inline-block;
-            margin-right: 14px;
-        }
-        .radio {
-            display: inline-block;
-            margin: 0 20px;
+    .menu-item-modal-note {
+        label {
+            color: $colorA;
+            font-size: 14px;
         }
     }
     fieldset {
-        padding: 0 14px 0;
-        .checkbox {
-            width: 50%;
-            display: inline-block;
-        }
+        margin: 20px auto;
+        padding: 20px 10px;
+        border: 1px solid $border-color;
     }
     legend {
-        font-size: 14px;
-        font-weight: 600;
-        position: relative;
+        color: #EC008B;
+        padding: 0 10px;
         margin: 0;
-        left: -14px;
+        background-color: white;
+        display: inline;
+        width: auto;
     }
-    .note {
+    .checkboxes, .radios {
+        display: flex;
+        flex-wrap: wrap;
         label {
-            display: block;
+            cursor: pointer;
+            flex-basis: 50%;
+            font-weight: 400;
+            color: #777;
+            margin: 10px 0;
+
+            .choice-price {
+                color: $colorA;
+            }
         }
     }
     .qty {

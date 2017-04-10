@@ -20,3 +20,18 @@
         }
     }
 }
+
+
+
+.checkout-form-delivery-address,
+.checkout-form-delivery-address-add {
+    input[type=radio] {
+        @include checkout-radio();
+    }
+    label {
+        font-size: 14px;
+    }
+    .address-name {
+        display: none;
+    }
+}

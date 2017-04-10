@@ -294,18 +294,17 @@ input.ng-dirty.ng-invalid {
     width: auto;
 
     .box-header {
-        background-color: #F8F8F8;
+        background-color: $colorA;
         padding: 5px;
-        border-bottom: 1px solid #EEE;
         h1 {
-            color: #0088CC;
-            font-size: 18px;
+            color: $colorF;
+            font-size: 16px;
             line-height: 30px;
             margin: 0;
         }
     }
 
-    .box-body {
+    .box-content{
         margin: 12px 20px;
         min-height: 100px;
     }
@@ -317,9 +316,15 @@ input.ng-dirty.ng-invalid {
     }
     .box-footer {
         text-align: right;
-        background-color: #F8F8F8;
+        background-color: $colorF;
         padding: 14px;
-        border-top: 1px solid #EEE;
+        border-top: 1px solid $border-color;
+
+        label {
+            font-size: 14px;
+            color: $colorA;
+            font-weight: 500;
+        }
 
         button {
             min-width: 100px;
@@ -332,16 +337,18 @@ input.ng-dirty.ng-invalid {
     margin-bottom: 20px;
     flex-flow: row wrap;
     justify-content: space-between;
-    >div {
+    > div {
         min-width: 100px;
         text-align: center;
         border: 1px solid #FAFAFA;
-        padding: 8px;
         cursor: pointer;
-        width: 120px;
 
         &:hover {
             border: 1px solid #CCC;
+        }
+
+        img {
+            max-width: 150px;
         }
     }
 }
@@ -379,7 +386,11 @@ i.creditcard {
     }
 }
 
-
+.mfp-container {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
 
 /***********************/
 /**** Media Queries ****/
