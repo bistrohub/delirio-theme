@@ -15,10 +15,6 @@ $colorF: #FFF;
 $colorG: #CCC;
 $border-color: #CCC;
 
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-}
 @import "mixins";
 @import "header";
 @import "nav-menu";

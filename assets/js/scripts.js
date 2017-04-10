@@ -60,7 +60,7 @@ $(document).ready(function () {
 
     $('.show-navigation').click(function () {
         $('.navigation').css({ left: 0 });
-        $('body').css({ overflow: 'hidden' })
+        $('body').css({ overflow: 'hidden' });
     });
 
     $('.hide-navigation').click(function () {
@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     $('.show-quick-order').click(function () {
         $('.quick-order').css({ left: 0 });
-        $('body').css({ overflow: 'hidden' })
+        $('body').css({ overflow: 'hidden' });
     });
 
     $('.hide-quick-order').click(function () {

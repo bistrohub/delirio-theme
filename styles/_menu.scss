@@ -92,34 +92,8 @@
     }
 }
 
-
 /* Menu modal */
 .menu-item-modal {
-    // .modal-header {
-    //     h1 {
-    //         color: $colorD;
-    //         font-size: 24px;
-    //     }
-    // }
-    // .modal-footer {
-    //     button {
-    //         background-color: $colorD;
-    //         color: $colorF;
-    //         cursor: pointer;
-    //         margin: 7px;
-    //     }
-    // }
-    // .modal-content {
-    //     margin: 0px 20px;
-    //     min-height: 80px;
-    //     font-size: 14px;
-    //     color: $colorE;
-    //     h3 {
-    //         font-size: 20px;
-    //         font-weight: 600;
-    //         margin: 7px 0;
-    //     }
-    // }
     .menu-item-modal-image {
         text-align: center;
         background-color: #EEE;
@@ -203,11 +177,5 @@
     }
     .qty-change {
         cursor: pointer;
-    }
-}
-
-.item-add {
-    button {
-        background-color: $colorA !important;
     }
 }
