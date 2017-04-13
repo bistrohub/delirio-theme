@@ -3,7 +3,7 @@
     margin: 20px 0;
     .checkout-form-gratitude-options {
         display: flex;
-        justify-content: center;;
+        justify-content: center;
         button {
             background-color: $colorF;
             border: 1px solid $colorG;
@@ -13,6 +13,9 @@
             outline: none;
             overflow: hidden;
             padding: 0;
+            @media (min-width: 768px) {
+                padding: 12px 0;
+            }
             text-align: center;
             transition: .2s;
             -webkit-transition: .2s;
@@ -37,11 +40,17 @@
             font-size: 16px;
             font-weight: 700;
             transition: .2s;
+            @media (min-width: 768px) {
+                font-size: 20px;
+            }
         }
         .checkout-form-gratitude-amount {
             color: $colorG;
             font-size: 12px;
             font-weight: 700;
+            @media (min-width: 768px) {
+                font-size: 14px;
+            }
         }
         button.active {
             border: 1px solid $colorA;

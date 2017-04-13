@@ -2,8 +2,13 @@
     border: 1px solid $border-color;
     font-size: 12px;
     margin: 0 auto;
+    width: 100%;
     @media (min-width: 768px) {
         font-size: 18px;
+    }
+    @media (min-width: 1200px) {
+        margin-top: 29px;
+        width: auto;
     }
     .order-summary-heading {
         border-bottom: 1px solid $border-color;
@@ -23,7 +28,11 @@
             padding: 0 15px;
             height: 100%;
             cursor: pointer;
+            @media (min-width: 768px) {
+                content: "";
+            }
         }
+
         .order-summary-title h3 {
             font-size: 18px;
         }
@@ -32,6 +41,9 @@
     .order-summary-body {
         overflow: hidden;
         height: 0;
+        @media (min-width: 768px) {
+            height: auto;
+        }
         -webkit-transition: height 0.8s;
         -moz-transition: height 0.8s;
         transition: height 0.8s;
@@ -52,6 +64,9 @@
     display: flex;
     justify-content: space-between;
     padding: 6px;
+    @media (min-width: 768px) {
+        padding: 12px;
+    }
 
     .order-summary-item-qty {
         flex-basis: 22px;
@@ -88,6 +103,9 @@
 
 .order-summary-lineitems {
     padding: 6px;
+    @media (min-width: 768px) {
+        padding: 12px;
+    }
     .order-summary-subtotal,
     .order-summary-lineitem,
     .order-summary-total {
@@ -110,7 +128,7 @@
 }
 
 .order-summary-actions {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     a {
         text-decoration: underline;

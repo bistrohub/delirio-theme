@@ -151,6 +151,10 @@
     .checkboxes, .radios {
         display: flex;
         flex-wrap: wrap;
+        @media (min-width: 768px) {
+            padding: 0 40px;
+        }
+
         label {
             cursor: pointer;
             flex-basis: 50%;

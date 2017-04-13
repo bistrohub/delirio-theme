@@ -1,4 +1,11 @@
 .checkout-form-payment {
+    .customer-card {
+        margin: 0 0 10px;
+        label span {
+            margin-left: 6px;
+            font-weight: 500;
+        }
+    }
 
     .form-group {
         display: flex;
