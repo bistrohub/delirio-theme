@@ -166,10 +166,6 @@ a, a:hover, a:focus {
     }
 }
 
-.input-group-addon {
-    border-radius: 0;
-}
-
 .panel {
     border-radius: 0;
 }
@@ -289,6 +285,9 @@ input.ng-dirty.ng-invalid {
     background: none repeat scroll 0 0 #FFFFFF;
     margin: 0 auto;
     max-width: 600px;
+    @media (min-width: 1200px) {
+        max-width: 800px;
+    }
     padding: 0;
     position: relative;
     width: auto;
