@@ -47,6 +47,8 @@ select:not([multiple]) {
     background-color: $colorA;
     color: $colorF;
     &.focus, &:focus, &:hover {
+        background-color: $colorA;
+        border-color: $colorA;
         color: $colorF;
     }
 }
