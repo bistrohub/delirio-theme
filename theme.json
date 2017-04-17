@@ -3,6 +3,7 @@
     "author": "Mario Campa <mcampa@bistrohub.com>",
     "scripts": [
         "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js",
+        "js/jquery.unveil.js",
         "js/scripts.js"
     ],
     "fields": {
