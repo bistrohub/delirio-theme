@@ -52,6 +52,15 @@
         <div class="cart-subtotal">
             Subtotal <strong>{{cart.subtotal | currency}}</strong>
         </div>
+        <div class="cart-address">
+            <p><b>Order Type:</b> {{ cart.type }}</p>
+            <p ng-if="cart.type == 'delivery'">
+                <b>Delivery Address:</b> 
+                {{ cart.address1 }} {{ cart.address2 }}
+                {{ cart.city }} {{ cart.zip }}
+            </p>
+            <a href="#" edit-order-address>Edit</a>
+        </div>
         <div class="cart-actions">
             <a class="btn" href="/checkout">Checkout</a>
         </div>
