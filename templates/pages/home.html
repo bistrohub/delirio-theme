@@ -3,17 +3,17 @@
 
 {% block content %}
     <div id="home-banner" class="home-banner"
-        data-center="background-position: 50% 0px;"
-        data-top-bottom="background-position: 50% -100px;"
+        data-center="background-position: 50% -20px;"
+        data-top-bottom="background-position: 50% 300px;"
         data-anchor-target="#home-banner">
         <div>
             <h1 class="title">
                 <img src="{{ fields.home_image }}" data-custom-field="src:home_image"><br>
                 <span data-custom-field="html:slogan">{{ fields.slogan }}</span>
             </h1>
-        </div>
-        <div>
-            {{ content('home-hero') }}
+            <div>
+                {{ content('home-hero') }}
+            </div>
         </div>
     </div>
 
