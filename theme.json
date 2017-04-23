@@ -29,6 +29,13 @@
             "on": "navbar-fixed",
             "off": ""
         },
+        "show_item_images": {
+            "type": "toggle",
+            "label": "Show Images of Menu Items",
+            "default": true,
+            "on": true,
+            "off": false
+        },
         "home_image": {
             "type": "image",
             "label": "Hero Logo",
@@ -63,7 +70,7 @@
     "editor": [
         {
             "label": "Config",
-            "fields": ["navbar_fixed"]
+            "fields": ["navbar_fixed", "show_item_images"]
         },
         {
             "label": "Colors",
