@@ -184,3 +184,25 @@
         cursor: pointer;
     }
 }
+
+.menu-is-closed {
+    text-align: center;
+    font-weight: 600;
+    color: $colorD;
+
+    .week-schedule {
+        color: $colorA;
+        padding: 0;
+        li {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 220px;
+            font-weight: 300;
+        }
+        .week-schedule-hour {
+            font-weight: 600;
+        }
+    }
+}
