@@ -21,6 +21,10 @@ select:not([multiple]) {
     padding-right: 1.5em;
 }
 
+p.error {
+    color: $colorD;
+}
+
 .clearfix {
     *zoom: 1;
     &:before {
