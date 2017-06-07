@@ -85,18 +85,22 @@
     .navbar-transparent {
         .customer-nav a {
             color: white;
+            text-shadow: 1px 1px #333;
         }
         .navbar-pages-root > a {
             color: white;
+            text-shadow: 1px 1px #333;
         }
     }
 
     body.scrolled .navbar-transparent {
         .customer-nav a {
             color: $colorD;
+            text-shadow: none;
         }
         .navbar-pages-root > a {
             color: $colorD;
+            text-shadow: none;
         }
     }
 
