@@ -73,9 +73,9 @@
             width: 100%;
         }
     }
-    // .item-content {
-    //     flex: 1;
-    // }
+    .item-content {
+        width: 100%;
+    }
     &:hover {
         border: 1px solid $colorA;
     }
