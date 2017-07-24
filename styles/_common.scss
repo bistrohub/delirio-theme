@@ -1,7 +1,7 @@
 body {
     font-family: 'Oxygen', sans-serif;
     font-size: 18px;
-    background-color: #EEE;
+    background-color: #FFF;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -9,6 +9,11 @@ body {
 
 h1, h2, h3 {
     color: $colorA;
+
+    &.handwritten {
+        font-family: 'Clicker Script', cursive;
+        color: #333;
+    }
 }
 
 select:not([multiple]) {
@@ -123,9 +128,6 @@ a, a:hover, a:focus {
 
 .main-content {
     flex-grow: 1;
-    background: white;
-    padding-top: 10px;
-    padding-bottom: 30px;
     h3 {
         color: $colorA;
         font-size: 24px;
@@ -395,21 +397,4 @@ i.creditcard {
     padding-left: 0;
     padding-right: 0;
     width: 100%;
-}
-
-/***********************/
-/**** Media Queries ****/
-/***********************/
-@media (min-width: 768px) {
-    .main-content {
-        padding-top: 20px;
-        padding-bottom: 40px;
-    }
-}
-
-@media (min-width: 992px) {
-    .main-content {
-        padding-top: 40px;
-        padding-bottom: 60px;
-    }
 }

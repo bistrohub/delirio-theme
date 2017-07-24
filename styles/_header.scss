@@ -10,6 +10,16 @@ body.navbar-fixed {
     .navbar {
         position: fixed;
     }
+    .navbar.navbar-transparent {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    &.scrolled .navbar.navbar-transparent {
+        @media (min-width: 768px) {
+            background-color: white;
+            box-shadow: 1px 1px 1px 1px #eee;
+        }
+    }
 }
 
 .navbar {
@@ -20,24 +30,11 @@ body.navbar-fixed {
     width: 100%;
     z-index: 1;
     box-shadow: 1px 1px 1px 1px #eee;
-
-    &.navbar-transparent {
-        background-color: transparent;
-        box-shadow: none;
-    }
-
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     -ms-transition: all 0.3s linear;
     transition: all 0.3s linear;
-}
-
-body.scrolled .navbar.navbar-transparent {
-    @media (min-width: 768px) {
-        background-color: white;
-        box-shadow: 1px 1px 1px 1px #eee;
-    }
 }
 
 .navbar-mobile {

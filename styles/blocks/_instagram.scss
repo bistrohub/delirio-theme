@@ -1,0 +1,14 @@
+.block-instagram {
+    .instagram-media {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style-type: none;
+            padding: 3px;
+            display: inline-block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
