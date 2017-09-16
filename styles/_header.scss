@@ -37,6 +37,25 @@ body.navbar-fixed {
     transition: all 0.3s linear;
 }
 
+.navigation-customer .location-select-buttom {
+    margin-right: 20px;
+}
+.location-select-buttom {
+    display: flex;
+    background-color: #7EC243;
+    color: #fff;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    height: 38px;
+    padding: 0 12px 0 0;
+    svg {
+        height: 28px;
+    }
+}
+
 .navbar-mobile {
     margin-right: -15px;
     margin-left: -15px;
@@ -47,7 +66,7 @@ body.navbar-fixed {
     background-color: $colorF;
 
     .navbar-mobile-toggle,
-    .navbar-mobile-logo,
+    .navbar-mobile-center,
     .navbar-mobile-cart {
         order: 1;
     }
@@ -56,8 +75,8 @@ body.navbar-fixed {
         flex: 1;
         margin-left: 4px;
     }
-    .navbar-mobile-logo img {
-        width: 35px;
+    .navbar-mobile-center img {
+        height: 35px;
     }
     .navbar-mobile-cart {
         flex: 1;

@@ -1,3 +1,8 @@
 <div class="{{ block.classes }}">
-    <div style="height: {{ block.config.height }}px;" data-block-map="{{ block.config | attr }}"></div>
+    <location-map
+        style="height: {{ block.config.height }}px;"
+        data-lat="{{ block.config.lat }}"
+        data-lng="{{ block.config.lng }}"
+        data-zoom="{{ block.config.zoom }}"
+        ></location-map>
 </div>

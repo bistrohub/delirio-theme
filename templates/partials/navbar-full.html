@@ -8,10 +8,14 @@
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
-            <div class="navbar-mobile-logo">
-                <a href="/">
-                    <img src="{{ fields.nav_logo_mobile }}" data-custom-field="src:nav_logo_mobile" alt="{{ name }}">
-                </a>
+            <div class="navbar-mobile-center">
+                {% if locations|length == 1 %}
+                    <a href="/">
+                        <img src="{{ fields.nav_logo_mobile }}" data-custom-field="src:nav_logo_mobile" alt="{{ name }}">
+                    </a>
+                {% else %}
+                    {% include "partials/select-location-btn.html" %}
+                {% endif %}
             </div>
             <div class="navbar-mobile-cart" cart>
                 <button type="button" class="btn show-quick-order">

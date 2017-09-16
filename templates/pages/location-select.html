@@ -1,0 +1,26 @@
+{% extends "layouts/full-page.html"  %}
+
+{% block content %}
+    <section class="main-content">
+        <div class="container">
+            <h1>Select Location</h1>
+            <div class="location-list">
+                {% for location in locations %}
+                    <div>
+                        <location-map
+                            style="height: 200px"
+                            data-lat="{{ location.geolocation.lat }}"
+                            data-lng="{{ location.geolocation.lng }}"
+                            data-href="{{location.menu_link}}"
+                            data-controls="false"
+                            data-zoom="13">
+                        </location-map>
+                        <h3><a href="{{location.menu_link}}">{{location.name}}</a></h3>
+                        <p>{{location.street}} {{location.city}} {{location.state}}</p>
+                        <a class="btn" href="{{location.menu_link}}">Open Menu</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
