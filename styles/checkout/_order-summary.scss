@@ -9,6 +9,7 @@
     @media (min-width: 1200px) {
         margin-top: 29px;
         width: auto;
+        min-width: 260px;
     }
     .order-summary-heading {
         border-bottom: 1px solid $border-color;
@@ -41,6 +42,7 @@
     .order-summary-body {
         overflow: hidden;
         height: 0;
+        font-size: 14px;
         @media (min-width: 768px) {
             height: auto;
         }
