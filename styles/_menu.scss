@@ -110,7 +110,6 @@
 .menu-item-modal {
     .menu-item-modal-image {
         text-align: center;
-        background-color: #EEE;
         width: 100%;
         min-height: 300px;
         img {
@@ -151,8 +150,8 @@
         }
     }
     fieldset {
-        margin: 20px auto;
-        padding: 20px 10px;
+        margin: 10px auto;
+        padding: 10px 10px;
         border: 1px solid $border-color;
     }
     legend {
@@ -163,20 +162,28 @@
         display: inline;
         width: auto;
     }
+    .alert {
+        background-color: $colorC;
+        padding: 6px;
+        border-radius: 0;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        margin: 0;
+        border: none;
+    }
     .checkboxes, .radios {
         display: flex;
         flex-wrap: wrap;
         @media (min-width: 768px) {
             padding: 0 40px;
         }
-
         label {
             cursor: pointer;
             flex-basis: 50%;
             font-weight: 400;
             color: #777;
-            margin: 10px 0;
-
+            margin: 0;
             .choice-price {
                 color: $colorA;
             }
@@ -208,7 +215,7 @@
         display: flex;
         justify-content: space-between;
         cursor: pointer;
-        color:$colorD;
+        color: $colorD;
         padding: 5px;
         .fa-check {
             color: $colorA;
