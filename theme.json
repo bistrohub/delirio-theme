@@ -7,6 +7,11 @@
         "js/scripts.js"
     ],
     "fields": {
+        "thankyou_image": {
+            "type": "image",
+            "label": "Order Complete Image",
+            "default": "img/thankyou-image.png"
+        },
         "nav_logo": {
             "type": "image",
             "label": "Top Navbar Logo",

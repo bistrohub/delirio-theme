@@ -3,10 +3,39 @@
 {% block content %}
     <section class="main-content">
         <div class="container">
-            <h3>Order {{ order.number }} ({{ order.type }})</h3>
-            <p>Dear {{ order.name }},</p>
-            <p>Thank you for your order.</p>
+            <div class="order-complete-messsage">
+                <img class="order-complete-messsage-image" src="{{ fields.thankyou_image }}" data-custom-field="src:thankyou_image">
+                <h1>Thank you for your order</h1>
+                <p class="order-complete-messsage-order-number">
+                    Order {{ order.number }} <b class="order-complete-messsage-order-type">{{ order.type }}</b>
+                </p>
+                <p>We've sent you an email with all the details of your order</p>
+            </div>
+
+            {% if order.type == 'pickup' %}
+            <div class="order-complete-pickup">
+                <h3>Pickup location:</h3>
+                <address>
+                    {{ location.street }}<br>
+                    {{ location.city }}, {{ location.state }} {{ location.zip }}<br>
+                    <a ng-href="mailto:{{ location.email }}">{{ location.email }}</a><br>
+                    {% if location.phone %}Phone: {{ location.phone }}<br> {% endif %}
+                </address>
+
+                <div class="direction-map">
+                    <location-map
+                        data-lat="{{ location.geolocation.lat }}"
+                        data-lng="{{ location.geolocation.lng }}"
+                        data-href="{{location.menu_link}}"
+                        data-controls="true"
+                        data-zoom="15">
+                    </location-map>
+                </div>
+            </div>
+            {% endif %}
+
             {% if order.type == 'delivery' %}
+            <div class="order-complete-delivery">
                 <h3>Delivery Information</h3>
                 <address>
                     <strong>{{ order.name }}</strong><br>
@@ -16,73 +45,76 @@
                     <a ng-href="mailto:{{ order.email }}">{{ order.email }}</a><br>
                     Phone: {{ order.phone }}
                 </address>
-                <hr>
+            </div>
             {% endif %}
-            <h3>Order Details</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Item / Description</th>
-                        <th style="text-align: center">Qty</th>
-                        <th style="text-align: right">Price</th>
-                        <th style="text-align: right">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in order.items %}
-                    <tr>
-                        <td>
-                            <b>{{ item.name }}</b> {{ item.variant }}
-                            {% for choice in item.choices %}
-                            <div>
-                                <i>
-                                    {% for option in choice.options %}
-                                    <span>{{ choice.name }}: {{ option.name }}</span><br>
-                                    {% endfor %}
-                                </i>
-                            </div>
-                            {% endfor %}
-                        </td>
-                        <td style="text-align: center">{{ item.qty }} x</td>
-                        <td style="text-align: right">
-                            {{ item.price | currency }}
-                            {% for choice in item.choices %}
-                            <div>
-                                {% for option in choice.options %}
-                                <span>{{ option.price | currency }}</span><br>
+
+            <div class="order-complete-details">
+                <h3>Order Summary</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Item / Description</th>
+                            <th style="text-align: center">Qty</th>
+                            <th style="text-align: right">Price</th>
+                            <th style="text-align: right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in order.items %}
+                        <tr>
+                            <td>
+                                <b>{{ item.name }}</b> {{ item.variant }}
+                                {% for choice in item.choices %}
+                                <div>
+                                    <i>
+                                        {% for option in choice.options %}
+                                        <span>{{ choice.name }}: {{ option.name }}</span><br>
+                                        {% endfor %}
+                                    </i>
+                                </div>
                                 {% endfor %}
-                            </div>
-                            {% endfor %}
-                        </td>
-                        <td style="text-align: right">{{ item.total | currency }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td style="text-align: right" colspan="3">Subtotal</td>
-                        <td style="text-align: right" id="order-complete-subtotal">
-                            {{ order.subtotal | currency }}
                             </td>
-                    </tr>
-                    {% for lineitem in order.lineitems %}
-                    <tr>
-                        <td style="text-align: right" colspan="3">
-                            {{ lineitem.label }}
-                        </td>
-                        <td style="text-align: right">
-                            {{ lineitem.amount | currency }}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                    <tr>
-                        <td style="text-align: right" colspan="3">Total</td>
-                        <td style="text-align: right">
-                            <b id="order-complete-total">{{ order.total | currency }}</b>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+                            <td style="text-align: center">{{ item.qty }}</td>
+                            <td style="text-align: right">
+                                {{ item.price | currency }}
+                                {% for choice in item.choices %}
+                                <div>
+                                    {% for option in choice.options %}
+                                    <span>{{ option.price | currency }}</span><br>
+                                    {% endfor %}
+                                </div>
+                                {% endfor %}
+                            </td>
+                            <td style="text-align: right">{{ item.total | currency }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td style="text-align: right" colspan="3">Subtotal</td>
+                            <td style="text-align: right" id="order-complete-subtotal">
+                                {{ order.subtotal | currency }}
+                                </td>
+                        </tr>
+                        {% for lineitem in order.lineitems %}
+                        <tr>
+                            <td style="text-align: right" colspan="3">
+                                {{ lineitem.label }}
+                            </td>
+                            <td style="text-align: right">
+                                {{ lineitem.amount | currency }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td style="text-align: right" colspan="3">Total</td>
+                            <td style="text-align: right">
+                                <b id="order-complete-total">{{ order.total | currency }}</b>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </section>
 {% endblock %}
