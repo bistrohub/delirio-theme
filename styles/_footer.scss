@@ -9,6 +9,10 @@ footer {
 
     a {
         color: white;
+        &:hover {
+            color: white;
+            text-decoration: underline;
+        }
     }
     p {
         margin: 0;
@@ -18,7 +22,6 @@ footer {
         justify-content: space-between;
         flex-wrap: wrap-reverse;
 
-        .footer-address,
         .footer-hours {
             flex: 2;
             padding-right: 5px;
@@ -44,10 +47,6 @@ footer {
                     max-width: 140px;
                 }
             }
-        }
-
-        .footer-address {
-            min-width: 150px;
         }
 
         .footer-links {

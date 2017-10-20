@@ -3,6 +3,7 @@
 {% block content %}
     <section class="main-content">
         <div class="container">
+            {{ content("top") }}
             <h1>Select Location</h1>
             <div class="location-list">
                 {% for location in locations %}
@@ -21,6 +22,7 @@
                     </div>
                 {% endfor %}
             </div>
+            {{ content("bottom") }}
         </div>
     </section>
 {% endblock %}
