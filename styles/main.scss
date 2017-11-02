@@ -15,6 +15,12 @@ $colorF: #FFF;
 $colorG: #CCC;
 $border-color: #CCC;
 
+$xs-width: 480px;
+$sm-width: 736px;
+$md-width: 992px;
+$lg-width: 1024px;
+$xl-width: 1200px;
+
 @import "mixins";
 @import "header";
 @import "nav-menu";

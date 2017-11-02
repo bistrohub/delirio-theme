@@ -6,19 +6,19 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    @media (min-width: 1200px) {
+    @media (min-width: $xl-width) {
         align-items: flex-start;
     }
     .checkout-form {
         margin: 0 auto;
         width: 100%;
-        @media (min-width: 1200px) {
+        @media (min-width: $xl-width) {
             width: auto;
         }
         fieldset {
             margin: 20px auto;
             padding: 20px 10px;
-            @media (min-width: 768px) {
+            @media (min-width: $sm-width) {
                 padding: 20px 20px;
             }
             border: 1px solid $border-color;

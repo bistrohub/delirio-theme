@@ -3,7 +3,7 @@ footer {
     font-size: 14px;
     padding-top: 12px;
     padding-bottom: 12px;
-    @media (min-width: 768px) {
+    @media (min-width: $sm-width) {
         font-size: 18px;
     }
 
@@ -36,13 +36,13 @@ footer {
             img {
                 max-width: 100px;
             }
-            @media (min-width: 768px) {
+            @media (min-width: $sm-width) {
                 display: block;
                 img {
                     max-width: 100px;
                 }
             }
-            @media (min-width: 1024px) {
+            @media (min-width: $lg-width) {
                 img {
                     max-width: 140px;
                 }
@@ -63,7 +63,7 @@ footer {
                 img {
                     margin: 2px;
                     max-width: 20px;
-                    @media (min-width: 768px) {
+                    @media (min-width: $sm-width) {
                         margin: 2px;
                         max-width: 50px;
                     }

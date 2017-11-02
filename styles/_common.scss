@@ -320,7 +320,7 @@ input.ng-dirty.ng-invalid {
     background: none repeat scroll 0 0 #FFFFFF;
     margin: 0 auto;
     max-width: 600px;
-    @media (min-width: 1200px) {
+    @media (min-width: $xl-width) {
         max-width: 800px;
     }
     padding: 0;

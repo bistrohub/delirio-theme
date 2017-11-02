@@ -17,7 +17,7 @@
         cursor: pointer;
     }
 
-    @media (min-width: 468px) {
+    @media (min-width: $xs-width) {
         margin: 20px 0;
         flex-direction: row;
     }

@@ -27,7 +27,7 @@
         background-image: url(theme-path("img/hero-800w.jpg"));
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: $sm-width) {
         background-image: url(theme-path("img/hero-1024w.jpg"));
         height: 500px;
         .title {
@@ -35,7 +35,7 @@
         }
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: $md-width) {
         background-image: url(theme-path("img/hero-large.jpg"));
         height: 900px;
         .title {

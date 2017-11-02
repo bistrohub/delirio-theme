@@ -9,7 +9,7 @@
             color: $colorD;
         }
     }
-    @media (min-width: 768px) {
+    @media (min-width: $sm-width) {
         display: inline-block;
         li {
             display: inline-block;
@@ -30,7 +30,7 @@
     li {
         margin: 20px 0;
     }
-    @media (min-width: 768px) {
+    @media (min-width: $sm-width) {
         float: right;
         padding: 0;
         margin: 0;
@@ -81,7 +81,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $sm-width) {
     body.navbar-fixed {
         .navbar-transparent {
             .customer-nav a {
