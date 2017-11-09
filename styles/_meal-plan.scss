@@ -1,0 +1,239 @@
+.meal-plan {
+    h1, h2, h3 {
+        text-align: center;
+    }
+    .price {
+        color: $colorD;
+        font-size: 12px;
+        font-family: monospace;
+        margin: 0 6px;
+    }
+
+    .location-list {
+        > div {
+            padding: 0;
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+}
+.meal-plan-steps {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+
+    li {
+        white-space: nowrap;
+        background-color: #eee;
+        color: #3d4c4f;
+        display: inline-block;
+        margin: 0;
+        font-size: 10px;
+        height: 30px;
+        position: relative;
+        padding: 0 18px;
+        line-height: 30px;
+
+        @media (min-width: $sm-width) {
+            font-size: 12px;
+            padding: 0 30px;
+        }
+
+        &:first-child {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px
+        }
+
+        &:last-child {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px
+        }
+
+        &:after  {
+            background-color: #eee;
+            content: "";
+            display: block;
+            position: absolute
+        }
+
+        &:after {
+            border-radius: 3px;
+            border-right: 3px solid white;
+            border-top: 3px solid white;
+            height: 25px;
+            width: 25px;
+            right: -13px;
+            top: 3px;
+            transform: rotate(45deg);
+            z-index: 5
+        }
+
+        &:last-child:after {
+            display: none
+        }
+
+        &.current {
+            background-color: $colorD;
+            color: #fff;
+        }
+
+        &.current:after {
+            background-color: $colorD
+        }
+
+        &.completed {
+            cursor: pointer;
+            background-color: $colorA;
+            color: #fff;
+        }
+
+        &.completed:after {
+            background-color: $colorA
+        }
+    }
+    @media (min-width: $sm-width) {
+        transform: scale(1.3);
+    }
+}
+
+.meal-plan-wizard {
+    margin: 0 0 30px;
+}
+
+.meal-selector {
+    .meal-name {
+        text-align: center;
+        font-size: 20px;
+        border-bottom: 1px solid #000;
+        margin: 26px 0 8px;
+    }
+
+    .item-name {
+        font-size: 16px;
+        margin: 16px 0 8px;
+    }
+
+    .item-desc {
+        font-size: 12px;
+    }
+
+    .item-options {
+        color: #777;
+        .option-name {
+            border-bottom: 1px solid #CCC;
+        }
+
+        .option-addons {
+            flex: 1;
+        }
+    }
+
+    .week-selector {
+        color: #777;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        .week-selector-description {
+            margin: 12px 12px 0 0;
+            font-size: 10px;
+            font-weight: 400;
+        }
+        .week-selector-checkboxes {
+            cursor: pointer;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            border-bottom: 1px solid #eee;
+
+            .day-checkbox {
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 50px;
+                font-size: 10px;
+
+                &::before {
+                    text-transform: capitalize;
+                }
+                &.mon::before { content: "mon"; }
+                &.tue::before { content: "tue"; }
+                &.wed::before { content: "wed"; }
+                &.thu::before { content: "thu"; }
+                &.fri::before { content: "fri"; }
+            }
+        }
+    }
+    @media (min-width: $xs-width) {
+        .week-selector {
+            .week-selector-description {
+                font-size: 14px;
+            }
+            .week-selector-checkboxes {
+                .day-checkbox {
+                    width: 50px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+    @media (min-width: $sm-width) {
+        .week-selector {
+            .week-selector-checkboxes {
+                border-bottom: none;
+                .day-checkbox {
+                    font-size: 12px;
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid #eee;
+                    margin: -1px -1px 0 0;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $md-width) {
+        .week-selector {
+            padding: 8px 20px 16px;
+            transition: box-shadow 0.2s ease-in-out;
+
+            &:hover {
+                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+            }
+            .week-selector-checkboxes {
+                .day-checkbox {
+                    margin: 5px;
+                    border-radius: 2px;
+                    transition: box-shadow 0.2s ease-in-out;
+
+                    &:hover {
+                        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $md-width) {
+    .mealplan-payment {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        .mealplan-payment-contact-form {
+            flex: 1;
+            padding: 20px;
+        }
+        .mealplan-payment-creditcard-form {
+            flex: 1;
+            padding: 20px;
+        }
+    }
+}

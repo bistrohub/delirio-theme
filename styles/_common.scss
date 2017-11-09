@@ -33,6 +33,11 @@ p.error {
     color: $colorD;
 }
 
+label .accepted-creditcards {
+    transform: scale(0.9);
+    display: inline-block;
+}
+
 .clearfix {
     *zoom: 1;
     &:before {
