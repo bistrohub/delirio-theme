@@ -8,6 +8,9 @@
                     <h1 class="align-center">{{ name }}</h1>
                     <form method="post" action="/login/signup" class="form-horizontal" role="form">
                         <input type="hidden" name="_token" value="{{ csrf_token }}"></input>
+                        {% if old.order_id %}
+                            <input type="hidden" name="order_id" value="{{ old.order_id }}"></input>
+                        {% endif %}
                         <fieldset>
                             <legend>Sign Up</legend>
                             <div class="form-group">

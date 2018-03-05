@@ -12,6 +12,35 @@
                 <p>We've sent you an email with all the details of your order</p>
             </div>
 
+            {% if (not customer) and (order.email) and (not order.customer_id) %}
+            <form class="complete-signup form-inline" action="/login/signup" method="post">
+                <input type="hidden" name="_token" value="{{ csrf_token }}"></input>
+                <input type="hidden" name="order_id" value="{{ order.id }}">
+                <input type="hidden" name="firstname" value="{{ order.firstname }}">
+                <input type="hidden" name="lastname" value="{{ order.lastname }}">
+                <input type="hidden" name="email" value="{{ order.email }}">
+                <hr>
+                <h3>Save your information for next time</h3>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input name="password" type="password" maxlength="20" class="form-control" autocomplete="off" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <input name="password_confirmation" type="password" maxlength="20" class="form-control" autocomplete="off" placeholder="confirm password">
+                </div>
+                <button type="submit" class="btn btn-default">Create Account</button>
+                <div>
+                    <p>When you create an account, you will have access to the following functionality:</p>
+                    <ul class="account-benefits">
+                        <li>Expedite your Checkout Process</li>
+                        <li>Access your Order History and Reorder</li>
+                        <li>Create and Maintain your own Address Book</li>
+                    </ul>
+                </div>
+                <hr>
+            </form>
+            {% endif %}
+
             {% if order.type == 'pickup' %}
             <div class="order-complete-pickup">
                 <h3>Pickup location:</h3>

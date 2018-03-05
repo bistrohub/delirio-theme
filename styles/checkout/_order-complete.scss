@@ -56,3 +56,23 @@
         color: $colorD;
     }
 }
+
+.complete-signup {
+    text-align: center;
+    h3, p {
+        margin: 20px 0 20px;
+    }
+    p {
+        font-weight: 700;
+    }
+}
+
+.account-benefits li {
+    list-style: none;
+    &:before {
+        font-family: 'FontAwesome';
+        content: "\f00c";
+        color: #7EC243;
+        margin: 0 10px 0 0;
+    }
+}
